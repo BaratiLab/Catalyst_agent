@@ -1,0 +1,11 @@
+[project]
+name = "cif-file-resource-server"
+version = "0.1.0"
+description = "MCP server for CIF file listing with formula and space group"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "mcp[cli]>=1.18.0",
+    "ase>=3.22.0",
+    "spglib",
+]

@@ -1,0 +1,204 @@
+Success:
+
+Adsorbates (assumed if not explicitly stated): *CO and *H.
+  - CO* target window: -0.82 to -0.52 eV (CO binds neither too weakly nor too strongly).
+  - H* target threshold: >= +0.33 eV (weak H adsorption to suppress HER).
+  - Stability screen: formation energy < -0.1 eV/atom (avoid obviously unstable phases).
+
+1. Material: Pb3Y  (Pb3Y, CIF `co2rr_cifs/Pb3Y.cif`, space group Pm-3m)
+  Facet (111): CO* = -0.7384 (in-range), H* = +0.3791 (meets) → PASS; formation energy = -0.287 eV/atom
+  Selection rationale: L12 A3B intermetallics with a p-block A-site (Pb) were screened to weaken H binding while retaining moderate CO* binding; Y tunes electron donation/CO affinity.
+  Reasoning: CO* sits comfortably inside the CO window while H* is sufficiently weak (positive and above threshold), matching the CO2RR-selective region without extra tuning.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): pristine facet already satisfies CO*/H* targets and formation-energy cutoff.
+  success after 1 run including run with no modifications.
+
+2. Material: Tl3La  (LaTl3, CIF `co2rr_cifs/LaTl3.cif`, space group Pm-3m)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.6130 (in-range), H* = +0.2369 (too low) → FAIL (H too low); formation energy = -0.347 eV/atom
+    Run 1 (+5% compressive in-plane strain): CO* = -0.6190 (in-range), H* = +0.3315 (meets) → PASS; formation energy = -0.347 eV/atom
+  Selection rationale: Tl-based A3B intermetallics were included because heavy p-block surfaces often suppress H adsorption while keeping CO* in a workable range, and La provides a strong electronic “lever” for tuning.
+  Reasoning: The pristine surface had ideal CO* but H* slightly too favorable; small compressive strain was a minimal, physics-plausible knob to weaken H adsorption into the threshold without breaking CO*.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline check showed CO* already correct and isolated H* as the only failure mode.
+    Run 1 (+5% compressive strain): applied strain to shift surface electronic structure/coordination to weaken H* while preserving CO* in-window.
+  success after 2 runs including run with no modifications.
+
+3. Material: Sn3Y  (Sn3Y, CIF `co2rr_cifs/Sn3Y.cif`, space group Pm-3m)
+  Facet (111): CO* = -0.6199 (in-range), H* = +0.5129 (meets) → PASS; formation energy = -0.495 eV/atom
+  Selection rationale: Sn-based intermetallics are CO2RR-relevant p-block platforms, and alloying with an electropositive element (Y) can tune CO* binding while keeping H* weak to avoid HER.
+  Reasoning: The surface simultaneously meets the CO* window and strongly suppresses H adsorption (high positive H*), indicating a favorable CO2RR-vs-HER balance without needing strain/doping.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): pristine facet already hits both descriptor targets and passes stability screening.
+  success after 1 run including run with no modifications.
+
+4. Material: Sn3Sc  (ScSn3, CIF `co2rr_cifs/ScSn3.cif`, space group Pm-3m)
+  Facet (111): CO* = -0.7299 (in-range), H* = +0.4646 (meets) → PASS; formation energy = -0.335 eV/atom
+  Selection rationale: Sn3Sc was chosen as a Sn3Y analogue to test how swapping the B-site (Y→Sc) shifts CO*/H* via electronegativity/size while staying in the same A3B structural family.
+  Reasoning: It retains in-window CO* while keeping H adsorption weak, showing the A3B Sn–(Sc/Y) family is robustly positioned in the CO2RR-selective descriptor region.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): pristine facet satisfies CO*/H* criteria, so no tuning was needed.
+  success after 1 run including run with no modifications.
+
+
+Failure:
+
+5. Material: Au3Sc  (Au3Sc, CIF `co2rr_cifs/Au3Sc.cif`)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.6147 (in-range), H* = +0.0940 (too low) → FAIL (H too low)
+    Run 1 (strain-only +5%): CO* = -0.5531 (in-range), H* = +0.2521 (low) → FAIL
+    Run 2 (strain-only +8%): CO* = -0.4730 (out; too weak), H* = +0.0951 (low) → FAIL
+    Run 3 (strain-only -5%): CO* = -0.6942 (in-range), H* = -0.0655 (low) → FAIL
+    Run 4 (doping+strain +5%, Sc→Y): CO* = -0.5447 (in-range), H* = +0.3014 (low) → FAIL
+    Run 5 (doping+strain +5%, Sc→La): CO* = -0.5746 (in-range), H* = +0.3162 (low) → FAIL
+    Run 6 (doping+strain +6%, Sc→La): CO* = -0.5596 (in-range), H* = +0.2818 (low) → FAIL
+  Selection rationale: Au3Sc was included because Au-containing intermetallics can preserve good conductivity and often land CO* in-range, making them a natural testbed for selectively weakening H adsorption.
+  Reasoning: CO* was already acceptable, so all tuning focused on pushing H* above +0.33 without shifting CO* out of the [-0.82, -0.52] window.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run confirmed CO* was fine and isolated H* as the only knob to tune.
+    Run 1 (strain +5%): test strain as the simplest knob to weaken H binding while keeping Au-like CO* chemistry.
+    Run 2 (strain +8%): explore larger strain in case H* responds nonlinearly (it pushed CO* too weak).
+    Run 3 (strain -5%): check opposite strain direction for H* sensitivity (H* worsened).
+    Run 4 (Sc→Y at +5%): try a closely related B-site to shift adsorption via similar size/valence but different electronics.
+    Run 5 (Sc→La at +5%): try a more electropositive B-site to further weaken H binding without over-weakening CO*.
+    Run 6 (Sc→La at +6%): slight strain adjustment to see if the near-miss H* values can cross the +0.33 threshold.
+  status: no PASS condition found under tried strain/doping settings.
+
+6. Material: Cd3Pt  (Cd3Pt, CIF `co2rr_cifs/Cd3Pt_pm3barm.cif`)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.8941 (too strong), H* = -0.1318 (too low) → FAIL (both)
+    Run 1 (strain-only -5%): CO* = -1.2086 (worse; too strong), H* = -0.1603 (low) → FAIL
+    Run 2 (strain-only +5%): CO* = NA (no valid configs), H* = -0.0593 (low) → FAIL
+    Run 3 (doping-only Pt→Au): CO* = NA (no valid configs), H* = -0.1148 (low) → FAIL
+    Run 4 (Phase D re-run, strain-only +3%): CO* = -0.7510 (in-range), H* = -0.0966 (low) → FAIL
+    Run 5 (Phase D re-run, doping+strain +3%, Pt→Bi): CO* = -0.7460 (in-range), H* = -0.0983 (low) → FAIL
+  Selection rationale: Cd3Pt was screened as a late-TM intermetallic candidate to see if Pt-based ensembles could be tuned into in-window CO* while suppressing H* (a common CO2RR-vs-HER challenge).
+  Reasoning: The pristine surface overbound CO and also bound H too strongly; tuning aimed to weaken CO* substantially and simultaneously raise H* toward weak adsorption.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): establish baseline showing both CO overbinding and strong H adsorption before applying tuning knobs.
+    Run 1 (strain -5%): probe whether lattice expansion/contraction can relieve CO overbinding (it made CO* even stronger).
+    Run 2 (strain +5%): try the opposite strain direction to weaken CO* (but viable CO* configs were filtered out).
+    Run 3 (Pt→Au): swap to a more inert noble metal to weaken CO binding and shift H* (but no valid CO* configs survived filtering).
+    Run 4 (+3% strain, re-run): revisit with a smaller strain step to see if CO* can enter window without destabilizing configurations (CO* improved; H* did not).
+    Run 5 (Pt→Bi at +3%): introduce p-block character to weaken H binding while maintaining CO* in-window (H* remained far too low).
+  status: no PASS condition reproduced; H* stayed strongly adsorbing even when CO* became acceptable.
+
+7. Material: Au3Y  (Au3Y, CIF `co2rr_cifs/Au3Y.cif`)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.6469 (in-range), H* = -0.2200 (too low) → FAIL (H too low)
+    Run 1 (strain-only +3%): CO* = -0.4947 (out; too weak), H* = +0.1190 (low) → FAIL
+    Run 2 (strain-only +5%): CO* = -0.4776 (out; too weak), H* = +0.2902 (low) → FAIL
+    Run 3 (doping+strain +5%, Y→Sc): CO* = -0.4795 (out), H* = +0.2475 (low) → FAIL
+  Selection rationale: Au3Y was included as a companion to Au3Sc to test whether changing the rare-earth/early-metal partner could preserve Au-like CO* while weakening H binding.
+  Reasoning: Compressive strain did raise H* somewhat, but it simultaneously weakened CO* out of the target window, preventing a CO*/H* “overlap” region.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run showed CO* was acceptable and H* was the limiting descriptor.
+    Run 1 (+3% strain): try a modest strain first to weaken H adsorption without excessively shifting CO*.
+    Run 2 (+5% strain): push strain harder after the modest attempt didn’t reach H* threshold (CO* left the window).
+    Run 3 (Y→Sc at +5%): mimic the Au3Sc-like local chemistry under the same strain to see if CO* can be pulled back into range.
+  status: strain improved H* but consistently broke CO*; no PASS found.
+
+8. Material: In3La  (In3La, CIF `co2rr_cifs/In3La.cif`)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.5912 (in-range), H* = +0.1187 (too low) → FAIL (H too low)
+    Run 1 (strain-only +5%): CO* = -0.6136 (in-range), H* = +0.1941 (low) → FAIL
+    Run 2 (doping+strain +5%, La→Y): CO* = -0.8162 (in-range, near lower bound), H* = +0.1545 (low) → FAIL
+  Selection rationale: In-based A3B intermetallics were chosen because In chemistry is CO2RR-relevant and often provides moderate CO binding while potentially suppressing HER compared to pure transition metals.
+  Reasoning: CO* was already well-positioned, so optimization focused on weakening H adsorption via strain and by swapping La→Y to change local electron donation/ensemble effects.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run confirmed CO* is fine and H* is too low, motivating strain/doping to weaken H adsorption.
+    Run 1 (+5% strain): use a simple elastic perturbation to weaken H* without changing chemistry (insufficient).
+    Run 2 (La→Y at +5%): test whether moving to a different rare-earth partner shifts H* upward while keeping CO* within bounds (it did not).
+  status: H* remained far below +0.33 even after tuning.
+
+9. Material: In3Y  (In3Y, CIF `co2rr_cifs/In3Y.cif`)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.7987 (in-range), H* = +0.1701 (too low) → FAIL (H too low)
+    Run 1 (strain-only +5%): CO* = -0.7991 (in-range), H* = +0.2578 (low) → FAIL
+    Run 2 (strain-only +8%): CO* = -0.7808 (in-range), H* = +0.3219 (slightly low) → FAIL
+    Run 3 (strain-only +8.5%): CO* = -0.7729 (in-range), H* = +0.3335 (meets) → PASS
+  Selection rationale: In3Y was selected because the pristine CO* was near-ideal (close to the strong-binding edge without exceeding it), making it a high-leverage candidate where strain might rescue H* into the threshold.
+  Reasoning: CO* stayed stable inside the window across strain, and H* increased monotonically with compressive strain until it barely crossed +0.33 at +8.5%.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run showed near-ideal CO* but insufficiently weak H adsorption, making it a strain-tuning candidate.
+    Run 1 (+5% strain): first-pass strain to weaken H adsorption while preserving the already-ideal CO*.
+    Run 2 (+8% strain): increase strain after the +5% near-miss to approach the +0.33 H* threshold.
+    Run 3 (+8.5% strain): fine-tune strain in a narrow band to cross the H* cutoff while keeping CO* in-window.
+  note: This achieves PASS at +8.5% strain, but it was listed under “Failure” in the original log because the pristine surface failed.
+
+10. Material: Al3Rh  (Al3Rh, CIF `co2rr_cifs/Al3Rh.cif`)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.5795 (in-range), H* = +0.2913 (slightly low) → FAIL (H too low)
+    Run 1 (strain-only +3%): H* = +0.3030 (still low) → FAIL
+    Run 2 (strain-only -3%): H* = +0.2876 (still low) → FAIL
+    Run 3 (strain-only +6%): H* = +0.0538 (much worse) → FAIL
+    Run 4 (strain-only +8.5%): CO* = -1.0186 (too strong), H* = -0.2722 (low) → FAIL
+    Run 5 (strain-only -5%): CO* = -0.1970 (out; too weak), H* = +0.2272 (low) → FAIL
+    Run 6 (doping-only Rh→Ag): CO* = -0.5768 (in-range), H* = +0.2768 (low) → FAIL
+  Selection rationale: Al3Rh was included as a “near-miss” case (CO* good, H* slightly too low) where small strain or late-metal substitution might be enough to suppress H adsorption without harming CO*.
+  Reasoning: The tuning attempts showed H* was not easily pushed above +0.33 and more aggressive strain destabilized CO* (either overbinding or becoming too weak).
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run identified a near-miss in H* with good CO*, motivating gentle strain/dopant nudges.
+    Run 1 (+3% strain): test mild strain to nudge a near-threshold H* upward with minimal disruption.
+    Run 2 (-3% strain): check opposite strain sign to see if H* is strain-sensitive in either direction.
+    Run 3 (+6% strain): explore larger strain after small strains failed (H* worsened sharply).
+    Run 4 (+8.5% strain): try high strain seen to work in other A3B cases, accepting risk to CO* (CO* overbound).
+    Run 5 (-5% strain): probe whether tensile strain can recover CO* while improving H* (CO* became too weak).
+    Run 6 (Rh→Ag): substitute a more inert late metal to weaken H binding while keeping CO* similar (H* remained below threshold).
+  status: no PASS found; behavior was not “strain-rescuable” without breaking CO*.
+
+11. Material: Al3Ni  (Al3Ni, CIF `co2rr_cifs/Al3Ni.cif`)
+  Facet (111):
+    Run 0 (no modifications): CO* = -0.4333 (too weak), H* = +0.3514 (meets) → FAIL (CO too weak)
+    Run 1 (strain-only +3%): CO* = -0.4379 (still out) → FAIL
+    Run 2 (strain-only -1.5%): CO* = -0.4674 (still out) → FAIL
+    Run 3 (strain-only -2.5%): CO* = -0.5003 (still out; close) → FAIL
+    Run 4 (strain-only -2.9%): CO* = -0.5200 (in-range), H* not rechecked at this exact strain → incomplete
+    Run 5 (strain-only -3.0%): CO* = -0.5253 (in-range), H* = +0.2778 (falls below threshold) → FAIL
+    Run 6 (doping+strain -3%, Ni→Cu): CO* = -0.5075 (still out), H* = +0.2782 (low) → FAIL
+    Run 7 (doping-only Ni→Fe): CO* = -1.3640 (too strong), H* = +0.0501 (low) → FAIL
+    Run 8 (Phase D re-run, doping-only Ni→Rh): CO* = -0.5167 (just out; too weak), H* = +0.3052 (low) → FAIL
+    Run 9 (Phase D re-run, doping+strain -1%, Ni→Rh): CO* = -0.5347 (in-range), H* = +0.3106 (low) → FAIL
+  Selection rationale: Al3Ni was selected as an “inverse-failure” case where H* was already acceptable but CO* was too weak, making it a targeted test for strengthening CO* without sacrificing HER suppression.
+  Reasoning: Strain could pull CO* into the window, but the same tuned conditions tended to reduce H* below +0.33; simple single-atom substitutions did not restore a joint CO*/H* pass region.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run showed H* was already acceptable but CO* was too weak, so tuning targeted CO* strengthening.
+    Run 1 (+3% strain): quick check whether modest compressive strain strengthens CO* (it didn’t).
+    Run 2 (-1.5% strain): begin tensile sweep to drive CO* more negative (still insufficient).
+    Run 3 (-2.5% strain): continue tensile sweep toward the CO* lower bound.
+    Run 4 (-2.9% strain): target the predicted CO*-window crossover point (but H* was not recomputed at that exact point).
+    Run 5 (-3.0% strain): verify crossover with both adsorbates at a nearby strain; CO* enters window but H* falls below threshold.
+    Run 6 (Ni→Cu at -3%): try a nearby late-metal substitution to stabilize H* while retaining strain-strengthened CO*.
+    Run 7 (Ni→Fe): test a more reactive dopant to strengthen CO* significantly (it overbound CO and worsened H*).
+    Run 8 (Ni→Rh): test a noble-ish dopant to adjust CO*/H* balance without large structural changes (near-miss CO* and low H*).
+    Run 9 (Ni→Rh with -1% strain): add mild strain to push CO* into range while hoping H* remains acceptable (H* stayed low).
+  status: no PASS found; CO* tuning conflicts with maintaining H* >= +0.33 in tested runs.
+
+12. Material: Cu  (Cu, CIF `co2rr_cifs/Cu.cif`)
+  Facet (511):
+    Run 0 (no modifications): CO* = -0.6382 (in-range), H* = -0.0437 (too low) → FAIL (H too low)
+    Run 1 (strain-only +5%): CO* = -1.0158 (too strong), H* = -0.5182 (low) → FAIL
+    Run 2 (strain-only -5%): CO* = -0.6678 (in-range), H* = -0.0920 (low) → FAIL
+    Run 3 (doping-only Cu→Ag): CO* = -0.6172 (in-range), H* = +0.0077 (low) → FAIL
+  Selection rationale: Cu(511) was included as a canonical CO2RR reference surface (Cu is the benchmark CO2RR metal), to test whether simple strain/doping could suppress H adsorption on an active stepped facet.
+  Reasoning: Despite acceptable CO*, H adsorption stayed far too favorable on this stepped Cu site, and tuning either worsened CO* or barely moved H*.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run on the Cu benchmark step facet showed CO* was fine but H* was far too favorable (HER-prone).
+    Run 1 (+5% strain): test whether strain can push H* toward weak adsorption on a step site (it worsened both H* and CO*).
+    Run 2 (-5% strain): check opposite strain sign for H* sensitivity while keeping CO* acceptable (H* remained strongly adsorbed).
+    Run 3 (Cu→Ag): attempt noble-metal dilution to weaken H binding while preserving CO* around the Cu-like value (H* stayed far below threshold).
+  status: no PASS found; H* suppression could not be achieved on this model surface.
+
+13. Material: YN-mp-6913-A  (YN, CIF `co2rr_cifs/YN-mp-6913-A.cif`)
+  Facet (110):
+    Run 0 (no modifications): CO* = -0.4011 (too weak), H* = -0.2410 (too low) → FAIL (both)
+    Run 1 (doping-only Y→Au): CO* = -0.3869 (still out), H* = -1.2595 (worse) → FAIL
+    Run 2 (Phase D re-run, no modifications): CO* = -0.4987 (still out; too weak), H* = -0.2410 (low) → FAIL
+  Selection rationale: A nitride (YN) was included as a chemically distinct class to test whether polar/covalent anion frameworks could shift CO*/H* away from metal-alloy trends.
+  Reasoning: The baseline nitride site was far from both targets, and Au substitution did not create a noble-like surface site in the intended direction for either adsorbate.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline run confirmed the nitride site fails both CO* and H* targets, motivating a chemistry-changing substitution.
+    Run 1 (Y→Au): try creating a noble-metal-like adsorption site to pull CO* and H* toward the desired weak-H / moderate-CO regime.
+    Run 2 (base re-run): verify whether the failure is robust under re-run settings (it remained outside both targets).
+  status: no PASS found; neither descriptor approached target with attempted doping.
+

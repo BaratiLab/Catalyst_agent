@@ -1,0 +1,15 @@
+[project]
+name = "energy-evaluation-server"
+version = "0.1.0"
+description = "MCP server: run AdsorbML energy evaluation from results.json, CIF, or serialized slab path"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "ase>=3.26.0",
+    "fairchem-core==2.5.0",
+    "mcp[cli]>=1.18.0",
+    "numpy",
+    "pymatgen>=2025.10.7",
+    "setuptools<81",
+    "torch==2.6.0",
+]

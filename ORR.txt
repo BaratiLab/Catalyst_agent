@@ -1,0 +1,595 @@
+Success:
+
+Assumption: Adsorbate is *OH for all reported \(E_{\mathrm{ads}}\) values unless explicitly stated otherwise (target window for balanced ORR kinetics: ~0.9–1.1 eV).
+
+Optimal (0.9–1.1 eV)
+1     - ZrO2 (mp-2574) (200): 0.9461 eV
+  Reasoning: ZrO2 is a chemically robust, moderately reducible oxide; its undercoordinated Zr–O motifs on (200) deliver near-volcano-optimal *OH binding (~1 eV), making it a strong ORR descriptor hit.
+- ZrO2 (mp-2574) (001): -7.8835 eV
+- ZrO2 (mp-2574) (101): -4.5994 eV
+- ZrO2 (mp-2574) (210): -0.7361 eV
+2     - PbTiO3 (mp-20459) (200): 0.9873 eV
+  Reasoning: PbTiO3 is a titanate perovskite (widely used as an ABO3 tuning platform) where A-site chemistry and Ti–O covalency can tune adsorbates; the (200) termination lands essentially at the *OH optimum.
+- PbTiO3 (mp-20459) (101): 1.1979 eV
+- PbTiO3 (mp-20459) (111): -0.2386 eV
+- PbTiO3 (mp-20459) (210): 0.4782 eV
+3     - SrTiO3 (mp-5229) (001): 1.0608 eV
+  Reasoning: SrTiO3 is a benchmark perovskite whose facets are heavily studied and readily strain/doping-tunable; (001) giving ~1.06 eV suggests a balanced *OH affinity consistent with ORR-relevant perovskite trends.
+- SrTiO3 (mp-5229) (101): -2.3634 eV
+- SrTiO3 (mp-5229) (210): 0.3384 eV
+4     - MgCo2O4 (mp-756442) (001): 0.9197 eV
+  Reasoning: Co-based spinels are canonical ORR/OER oxide motifs; Mg on the A-site tunes Co oxidation/covalency, and the (001) surface sits in the optimal *OH window.
+- MgCo2O4 (mp-756442) (101): -0.8107 eV
+- MgCo2O4 (mp-756442) (210): 0.0306 eV
+5     - SrNiO3 (mp-762506) (210): 0.9588 eV
+  Reasoning: Ni perovskites are frequently ORR-active due to strong Ni–O covalency; SrNiO3 was included as a Ni-based perovskite analogue whose (210) facet gives near-ideal *OH binding.
+- SrNiO3 (mp-762506) (210): 0.9588 eV
+- SrNiO3 (mp-762506) (111): 0.7144 eV
+- SrNiO3 (mp-762506) (101): -0.2994 eV
+6     - NiO (mp-1180047) (210): 0.948 eV
+  Reasoning: NiO is a simple, well-characterized reference oxide for Ni chemistry; its (210) facet providing ~0.95 eV makes it a useful baseline “single-oxide” ORR descriptor match.
+- NiO (mp-1180047) (101): 1.9193 eV
+7     - CaNiO3 (mp-1368210) (210): 0.9958 eV
+  Reasoning: CaNiO3 extends the Ni-perovskite family by A-site contraction (vs Sr/Ba/La), probing how lattice distortion tunes Ni–O; (210) lands almost exactly at the ~1 eV *OH optimum.
+- CaNiO3 (mp-1368210) (001): 1.1382 eV
+- CaNiO3 (mp-1368210) (111): 0.7677 eV
+- CaNiO3 (mp-1368210) (101): 0.6013 eV
+
+8     - ZnGa2O4 (mp-5794) (210): 1.0419 eV
+  Reasoning: ZnGa2O4 is a stable spinel used as an oxide benchmark/support motif; its (210) surface reaching ~1.04 eV makes it a non-transition-metal (B=Ga) comparator that still achieves near-ideal *OH binding via geometry/termination effects.
+- ZnGa2O4 (mp-5794) (001): 1.2858 eV
+- ZnGa2O4 (mp-5794) (111): -1.154 eV
+- ZnGa2O4 (mp-5794) (101): -0.4898 eV
+
+9     - CaTi2O6 (mp-1079825) (210): 0.9755 eV
+  Reasoning: CaTi2O6 is a Ti-rich Ca–Ti–O phase between CaTiO3 and TiO2, so it was selected as an interpolation between known good titanates. Its (210) surface exposes a mixed Ti–O coordination environment that balances *OH binding close to the ideal ~1 eV window.
+- CaTi2O6 (mp-1079825) (101): 0.8324 eV
+
+10- RuO (oqmd-4372977) (210): 1.0445 eV
+  Reasoning: RuO sits between metallic Ru and RuO2 in oxidation state, making it a natural neighbor to probe around the known active RuO2. The (210) surface of cubic RuO yields *OH adsorption near 1 eV, indicating a balanced binding strength compared to more strongly binding RuO2 facets.
+11- LaNiO2 (mp-20392) (001): 0.9456 eV
+  Reasoning: LaNiO2 is an infinite-layer nickelate related to LaNiO3 but with reduced oxygen content, chosen to explore how nickelate electronic structure affects *OH binding. Its (001) surface gives an adsorption energy just under 1 eV, putting it squarely in the optimal window and suggesting a balanced catalytic activity comparable to the best perovskite planes.
+12- BaFeO3 (mp-19035) (111): 1.0901 eV
+  Reasoning: BaFeO3 is the Ba analogue of SrFeO3 and LaFeO3, chosen to probe how A-site expansion tunes Fe4+–O covalency around known active Fe perovskites. Its (111) surface gives an *OH adsorption energy of ≈1.09 eV, squarely in the optimal 0.9–1.1 eV band and indicative of balanced binding comparable to your best titanate and nickelate planes.
+13- BaNiO3 (mp-1120765) (111): 1.0578 eV
+  Reasoning: BaNiO3 is the Ba analogue of LaNiO3 and CaNiO3, used to examine how expanding the A-site radius around Ni4+ affects surface adsorption. Its (111) facet falls neatly in the 0.9–1.1 eV optimal window (≈1.06 eV), pointing to Ni–O covalency comparable to the best nickelate perovskites in your set but with a slightly more expanded lattice.
+14- BaNiO2 (mp-18943) (001): 1.0464 eV
+  Reasoning: BaNiO2 is a more reduced, layered Ni oxide chosen as a Ba-based counterpart to CaNiO2 and LaNiO2 to map *OH adsorption across infinite-layer–like nickelates. On its (001) surface AdsorbML predicts E_ads ≈1.05 eV, indicating that square-planar Ni still delivers near-ideal binding despite the lower oxygen content compared to perovskite BaNiO3.
+15- SrMnO3 (mp-19001) (001): 1.0436 eV
+  Reasoning: SrMnO3 extends your Mn perovskite screening beyond LaMnO3, targeting how a more ionic Sr2+ A-site and higher Mn oxidation state influence *OH binding. Its (001) surface has E_ads ≈1.04 eV, firmly in the optimal range and showing that Mn4+-based perovskites can match the adsorption balance of your best Fe- and Ni-based systems.
+
+16- La2NiO4 (mp-21326) (001): 1.0868 eV
+  Reasoning: La2NiO4 is the n=1 Ruddlesden–Popper analogue of LaNiO3, chosen to extend your K2NiF4 nickelate series around strong-performing RP titanates and nickelates. Its (001) surface exposes layered NiO2 planes separated by La–O rock-salt blocks and binds *OH at ≈1.09 eV, squarely in the optimal window and consistent with balanced Ni–O covalency seen in your best Ni perovskites.
+17- Pr2NiO4 (mp-18839) (001): 0.9131 eV
+  Reasoning: Pr2NiO4 is a lighter rare-earth RP nickelate interpolating between La2NiO4 and Nd2NiO4, selected to map *OH adsorption across the La–Pr–Nd K2NiF4 sequence. The (001) surface lies near 0.91 eV, firmly in the optimal band, showing that Pr-based RP layers can slightly soften Ni–O binding relative to La2NiO4 while remaining catalytically balanced.
+18- Gd2NiO4 (mp-1207225) (001): 1.0750 eV
+  Reasoning: Gd2NiO4 extends the RP nickelate series to a smaller, more strongly distorted lanthanide, chosen to test how enhanced octahedral tilts affect Ni–O covalency. Its (001) surface retains an adsorption energy of ≈1.08 eV, still in the optimal range, indicating that even with significant structural distortion the K2NiF4 motif preserves near-ideal *OH binding.
+
+
+     19 - CaTiO3 (mp-5827)
+        Chosen because: Close (001) 0.8948 eV is just below the 0.9–1.1 eV optimal window (good candidate to tune upward slightly).
+        Reasoning: CaTiO3 is a canonical titanate perovskite ORR screening reference; starting slightly weak on *OH makes it ideal for small, physically plausible strain/dopant “nudges” into the ~1 eV optimum.
+        Planes requested: (001), (100), (110), (111), (210) (includes the Close-reported (001) and other common perovskite cuts).
+        Run A (Ti→Zr surface doping, strain -2% tensile): (001) 1.1411, (100) 1.1415, (110) -2.4027, (111) -3.5248, (210) 0.7910 eV → not optimal.
+        Run A rationale: Used isovalent Zr substitution plus tensile strain to perturb Ti–O reactivity and strengthen *OH on borderline facets; it overshot on (001)/(100) and destabilized other terminations.
+        Run B (strain-only, -1% tensile): (001) 0.9907 eV (optimal), (100) 0.9930 eV (optimal) → 
+        Run B rationale: Applied mild tensile strain as the minimal-change knob to strengthen *OH slightly without changing chemistry, successfully moving (001)/(100) into the optimal band.
+        success after 3 runs including run with no modifications.
+        Success rationale: small tensile strain (without doping) nudged the borderline (001)/(100) facets upward into the optimal region.
+
+- CaTiO3 (mp-5827) (111): -2.2768 eV
+- CaTiO3 (mp-5827) (101): -2.4271 eV
+- CaTiO3 (mp-5827) (210): 0.6831 eV
+
+      20 - TiO2 (mp-2657)
+        Chosen because: Close (211) 0.8875 eV is just below optimal; rutile (211) is a known high-activity facet worth tuning.
+        Reasoning: TiO2 is a foundational oxide for ORR benchmarking and facet chemistry; the well-studied rutile (211) being slightly weak on *OH makes it a targeted candidate for gentle tuning into the ~1 eV optimum.
+        Planes requested: (211), (110), (100), (001), (111)/(101) (includes the Close-reported (211) plus low-index rutile planes).
+        Run A (Ti→Zr surface doping, +1% compressive): (211) -3.4632, (110) -1.5387, (100) -2.5200, (001) -0.0610, (111) -0.2924 eV → overbinding/too strong.
+        Run A rationale: Tested Zr substitution plus compressive strain as a first-pass electronic/structural perturbation to tune *OH strength; it drove many terminations into severe overbinding/instability.
+        Run B (strain-only, -1% tensile): (211) 1.0475 eV (optimal), (101) 0.9400 eV (optimal) → 
+        Run B rationale: Removed dopant disorder and used mild tensile strain alone to shift adsorption toward balanced binding on the target facet, yielding optimal (211) and (101).
+        success after 3 runs including run with no modifications.
+        Success rationale: removing dopant and applying mild tensile strain recovered a near-ideal (211) binding energy and also made (101) optimal.
+
+  - TiO2 (mp-2657) (211): 0.8875 eV
+  - TiO2 (mp-2657) (111): 0.6208 eV
+  - TiO2 (mp-2657) (200): -6.4727 eV
+
+
+      21 - CoAl2O4 / Al2CoO4 (mp-36447)
+        Chosen because: Close (001) 1.1235 eV is slightly above optimal; expected to soften with modest strain.
+        Reasoning: CoAl2O4 is a stable spinel proxy for Co-centered ORR motifs; starting slightly strong on *OH makes it a good test of whether small elastic strain can soften binding into the volcano optimum.
+        Planes requested: (001), (100), (110), (111), (210) (common spinel terminations + a higher-index cut).
+        Run A (strain-only, +2% compressive): (001) 1.0948 eV (optimal), (100) 1.0919 eV (optimal), (111) -3.9569 eV; (110)/(210) error "Slab not tiled" → success on (001)/(100).
+        Run A rationale: Used strain as a gentle, chemistry-preserving knob to soften slightly-overbinding (001)/(100) terminations; +2% compressive was sufficient to bring them into 0.9–1.1 eV.
+        success after 2 runs including run with no modifications.
+        Success rationale: compressive strain slightly weakened the borderline-strong (001) binding into the 0.9–1.1 eV window.
+
+- CoAl2O4 (mp-36447) (001): 1.1235 eV
+- CoAl2O4 (mp-36447) (111): -4.6684 eV
+- CoAl2O4 (mp-36447) (101): -1.3775 eV
+- CoAl2O4 (mp-36447) (210): -0.2198 eV
+
+
+      22 - CoGa2O4 / Ga2CoO4 (mp-765466)
+        Chosen because: Close (001) 1.1102 eV is barely above optimal; ideal for strain/dopant nudging.
+        Reasoning: CoGa2O4 is a Co-spinel analogue where swapping Al↔Ga and applying strain can tune Co–O covalency; its (001) being just above the *OH optimum makes it a prime “nudge” candidate.
+        Planes requested: (001), (100), (110), (111), (210) (common spinel terminations + a higher-index cut).
+        Run A (Ga→Al surface doping, +2% compressive): (001) 1.2180, (100) 1.2042, (110) -0.6318, (111) -0.8609, (210) 0.0084 eV → not optimal.
+        Run A rationale: Tried Al substitution plus compressive strain to adjust surface ionicity/covalency and soften adsorption; instead it pushed (001)/(100) farther into strong-binding.
+        Run B (strain-only, +2% compressive): (001) 1.2014, (100) 1.1159 eV (still high), (111) -4.4015 eV → not optimal.
+        Run B rationale: Isolated the strain effect (removing dopant) to see if compression alone would soften binding; it still left (001) too strong.
+        Run C (strain-only, -2% tensile): (001) 1.0584 eV (optimal) → success; (111) error "No valid configurations found".
+        Run C rationale: Switched strain sign to tensile after compression failed, using it to soften the slightly-overbinding (001) into the 0.9–1.1 eV window.
+        success after 4 runs including run with no modifications.
+        Success rationale: tensile strain (without dopant) was the correct direction to soften the slightly-overbinding (001) facet into the optimal band.
+
+- CoGa2O4 (mp-765466) (001): 1.1102 eV
+- CoGa2O4 (mp-765466) (111): -5.5506 eV
+- CoGa2O4 (mp-765466) (101): -0.869 eV
+- CoGa2O4 (mp-765466) (210): 0.3276 eV
+
+
+      23 - KNbO3 (mp-7375)
+        Chosen because: Close (101) 1.177 eV is on the strong side; perovskite-like facets often show strong facet dependence, so testing (111) can yield balance.
+        Reasoning: KNbO3 is a Nb-based ABO3 perovskite (a different B-site chemistry than Ti/Fe/Ni) used to diversify the ORR oxide space; strong facet dependence makes it a good target for finding a termination with near-ideal *OH binding.
+        Planes requested: (001), (100), (110), (111), (101) (includes the Close-reported (101) and common perovskite facets).
+        Run A (strain-only, +3% compressive): (111) 0.9273 eV (optimal) → success; (001) -2.0197, (100) -2.5572 eV; (101)/(110) error "Slab not tiled".
+        Run A rationale: Focused on the (111) termination to change Nb–O coordination and used moderate compressive strain to soften overly strong binding from other facets, landing (111) in the optimal band.
+        success after 2 runs including run with no modifications.
+        Success rationale: (111) provided the balanced termination; compressive strain moved it into the optimal band while other terminations remained too reactive.
+
+  - KNbO3 (mp-7375) (101): 1.177 eV
+  - KNbO3 (mp-7375) (001): -1.9609 eV
+  - KNbO3 (mp-7375) (200): -2.5245 eV
+
+      24 - Nd2NiO4 (mp-19191)
+          Reasoning: Nd2NiO4 is the Nd member of the RP nickelate family between Pr2NiO4 and Gd2NiO4, selected to track how lanthanide contraction tunes surface reactivity. The (001) surface adsorbs *OH at ≈1.13 eV, slightly above the optimal band but still close, implying moderately stronger Ni–O bonding than La2NiO4 while remaining within a practically useful range.
+          Chosen because: Close (001) 1.1307 eV is slightly above optimal and has reasoning documented (Ln-contraction tuning in RP nickelates).
+          Planes requested: (001), (100), (010), (110), (111) (layered (001) vs in-plane cuts + a higher-index cut).
+          Run A (strain-only, +2% compressive): (001) 1.1449 eV (still high) → not optimal.
+          Run A rationale: Tested small compressive strain as a conservative first knob to soften slightly-overbinding *OH on (001); it shifted the wrong direction (slightly stronger).
+          Run B (strain-only, -2% tensile): (001) 2.2961 eV (too weak) and other facets largely overbinding → not optimal.
+          Run B rationale: Explored opposite strain sign to map sensitivity and attempt the complementary tuning direction; it over-softened *OH on (001) while leaving other facets problematic.
+          Run C (no modifications): (001) 1.1277 eV (still high) → not optimal.
+          Run C rationale: Re-ran the unmodified baseline to confirm the starting adsorption regime before adding further chemical perturbations.
+          Run D (Ni→Co surface doping): (001) 0.8560 eV (too weak) → not optimal.
+          Run D rationale: Introduced Co at the surface to weaken Ni-centered adsorption by changing d-electron filling/covalency; it overshot into weak-binding.
+          Run E (Ni→Co surface doping, -1% tensile): (001) 1.0880 eV (optimal) → 
+          Run E rationale: Combined Co substitution (major tuning) with mild strain (fine tuning) to bring *OH binding back into the 0.9–1.1 eV optimum on (001).
+          success after 6 runs including run with no modifications.
+          Success rationale: Co substitution weakened adsorption too much by itself, but combining it with mild tensile strain restored balanced binding on (001).
+
+      25 - SmNiO3 (mp-1099668)
+        Reasoning: SmNiO3 is a more distorted rare-earth nickelate perovskite, chosen as a continuation of the Nd/Pr nickelate series to probe the effect of increasing octahedral tilts. Its (210) surface binds *OH at ≈0.80 eV, on the weak-binding side of the close window, indicating that Sm-induced distortions noticeably reduce adsorption strength compared to the nearly cubic La- and Pr-based nickelates.
+        Chosen because: Close (210) 0.8040 eV (weak side) but Near (001) 1.2208 eV (strong side) indicates strong facet dependence (reasoning documented); small strain adjustments can move (210) into optimal.
+        Planes requested: (210), (001), (100), (110), (111) (explicitly targets the two reported facets plus common cuts).
+        Run A (strain-only, -1% tensile): (210) 0.8970 eV (just below optimal) → close.
+        Run A rationale: Applied mild tensile strain to strengthen *OH on the weak-binding (210) facet while preserving chemistry, nearly reaching the target window.
+        Run B (strain-only, -1.5% tensile): (210) 0.7005 eV → too weak (overshot).
+        Run B rationale: Swept strain magnitude to gauge sensitivity; increasing strain moved adsorption away from the optimum and weakened binding too far.
+        Run C (Ni→Cu surface doping, -1% tensile): (210) 0.8189 eV → still weak.
+        Run C rationale: Tested Cu substitution to alter surface electronic structure and strengthen adsorption on the targeted facet; it was insufficient to reach the optimal band.
+        Run D (strain-only, -1.1% tensile): (210) 0.9066 eV (optimal) → 
+        Run D rationale: Fine-tuned strain between the “almost” and “overshot” cases to land precisely in the 0.9–1.1 eV window on (210).
+        success after 5 runs including run with no modifications.
+        Success rationale: a very small additional tensile strain was enough to move the borderline (210) facet into the 0.9–1.1 eV window.
+
+- SmNiO3 (mp-1099668) (210): 0.8040 eV
+- SmNiO3 (mp-1099668) (001): 1.2208 eV
+
+      26 - SmCoO3 (mp-22549)
+        Reasoning: SmCoO3 is a Co-based analogue of LaCoO3 and PrCoO3, selected to explore Co3+/O covalency in a smaller A-site environment. The (210) surface yields an adsorption energy of ≈1.14 eV, just above the optimal range but still in the close window, suggesting somewhat stronger Co–O bonding than in LaCoO3 while remaining within the broader design target.
+        Chosen because: Close (210) 1.1363 eV is slightly strong with documented reasoning; surface substitution can reduce binding strength on the targeted plane.
+        Planes requested: (210), (001), (101), (111), (110) (includes the Close-reported (210) plus common perovskite cuts).
+        Run A (strain-only, +2% compressive): no optimal facets (many overbinding; e.g. (001) -0.0873 eV, (101) -1.6949 eV).
+        Run A rationale: Tried compressive strain first as a chemistry-preserving knob to soften slightly-too-strong adsorption on the target facet; other terminations remained excessively reactive/overbinding.
+        Run B (strain-only, +0.5% compressive): (210) 1.1280 eV (still high).
+        Run B rationale: Reduced the strain magnitude to make a finer adjustment after the larger compression failed, but the (210) adsorption stayed just outside the window.
+        Run C (Co→Fe surface doping): (210) 1.0681 eV (optimal) → 
+        Run C rationale: Used Fe substitution to moderate Co–O covalency and soften adsorption on the reactive surface site, bringing (210) into 0.9–1.1 eV.
+        success after 4 runs including run with no modifications.
+        Success rationale: Fe substitution on the surface Co site moderated the slightly-too-strong (210) binding into the optimal band.
+
+      27 - CaNi2O5 (mp-1410425)
+        Reasoning: CaNi2O5 was selected as a mixed-valence Ni oxide interpolating between NiO- and CaNiO3-like chemistries, inspired by the strong performance of LaNiO3 and SrNiO3. The (111) surface exposes a dense network of corner-sharing NiO6 units, yielding E_ads ≈0.96 eV and suggesting well-balanced *OH bonding that avoids both severe overbinding and very weak adsorption.
+        Chosen because: Near (101) 1.2883 eV is at the strong edge with reasoning documented; goal was to reduce binding into 0.9–1.1 eV.
+        Planes requested: (101), (001), (111), (210), (100) (includes the Near-reported (101) and common terminations).
+        Run A (Ni→Co surface doping): (111) 1.0070 eV (optimal) → success; (101) 1.2214 eV (still strong), (001) 1.6160 eV, (100) 0.9045 eV (close), (210) 0.4727 eV.
+        Run A rationale: Substituted Co on the surface B-site to weaken overly strong Ni-centered adsorption on key terminations and search for a facet that lands near ~1 eV; (111) became optimal.
+        sucess after 2 runs including run with no modifications.
+        Success rationale: changing the surface B-site from Ni to Co shifted the adsorption strength, and the dense (111) facet landed squarely in the optimal region.
+
+- CaNi2O5 (mp-1410425) (111): 0.9561 eV
+- CaNi2O5 (mp-1410425) (101): 1.2883 eV
+
+
+
+      28 - PrCoO3 (mp-20427)
+        Reasoning: PrCoO3 is the Pr-based Co perovskite analogue to LaCoO3, chosen to probe how replacing La with a smaller rare earth alters Co–O covalency and surface energetics. The (111) surface shows E_ads ≈0.75 eV, slightly below the close window, implying comparatively weak *OH binding and suggesting lower intrinsic activity than the best Ni and Ru perovskite surfaces in your set.
+        Chosen because: Near (111) 0.7499 eV (weak side) with reasoning documented; goal was to strengthen adsorption on the targeted (111) facet into optimal.
+        Planes requested: (111), (001), (100), (110), (210) (includes the Near-reported (111) and common perovskite cuts).
+        Run A (strain-only, -5% tensile): (111) 0.7422 eV → still weak.
+        Run A rationale: Used large tensile strain to try to strengthen *OH adsorption on a weak-binding facet without changing composition; it had minimal effect here.
+        Run B (Co→Cu surface doping): (111) 0.8707 eV → still below optimal.
+        Run B rationale: Tested Cu substitution to tune surface electronic structure toward stronger adsorption while keeping the perovskite scaffold; it moved closer but remained sub-optimal.
+        Run C (Co→Zn surface doping): (111) 0.9606 eV (optimal) → 
+        Run C rationale: Used Zn substitution to more strongly perturb surface site reactivity/coordination and strengthen adsorption into the 0.9–1.1 eV band without triggering overbinding.
+        success after 4 runs including run with no modifications.
+        Success rationale: Zn substitution provided a moderate weakening/strengthening balance that brought the targeted (111) facet into the 0.9–1.1 eV range.
+
+- PrCoO3 (mp-20427) (111): 0.7499 eV
+
+
+
+Failure:
+
+1- Co3O4 (mp-18748)
+  Chosen because: Close (200) 0.8891 eV is just below optimal; attempted to raise into 0.9–1.1 eV.
+  Reasoning: Co3O4 is a prototypical Co-spinel frequently discussed for ORR/OER; its *OH binding being just below the target made it a logical “tune-up” candidate, but facet competition/termination effects prevented success here.
+  Planes requested: (200), (100), (110), (111), (210) (common spinel/cubic low-index + higher-index).
+  Run A (Co→Zn surface doping, -1% tensile): (200) 0.8778, (100) 0.8778 eV; (110) 0.0480 eV; (210) 0.2059 eV; (111) -0.7206 eV → no optimal facets.
+  Run A rationale: Introduced Zn to tune Co-site reactivity and used mild tensile strain to strengthen borderline *OH adsorption on (200)/(100); it failed due to other facets becoming far from optimal.
+  Run B (strain-only, -5% tensile): (200) 0.8539, (100) 0.8541 eV → still below optimal; no success.
+  Run B rationale: Tried a larger strain-only adjustment (removing dopant complexity) to strengthen adsorption; it still could not lift (200)/(100) into 0.9–1.1 eV.
+
+- Co3O4 (mp-18748) (200): 0.8891 eV
+- Co3O4 (mp-18748) (101): -0.1152 eV
+- Co3O4 (mp-18748) (210): 0.6262 eV
+- Co3O4 (mp-18748) (211): -0.6778 eV
+
+
+
+2- LaCuO3 (mp-3474)
+  Chosen because: Close (101) 1.1084 eV is just above optimal; attempted to soften into 0.9–1.1 eV.
+  Reasoning: LaCuO3 was included as a Cu-perovskite out-of-family comparator to test late transition-metal oxides; although its baseline *OH adsorption was near-optimal, tuning attempts pushed key facets away from balance.
+  Planes requested: (101), (001), (111), (110), (210) (includes the Close-reported (101) and multiple terminations).
+  Run A (strain-only, +1% compressive): (101) 1.4610 eV (too strong); (001) -0.2804 eV; (111) 0.0413 eV; (210) 0.2456 eV; (110) error "No valid configurations found" → no success.
+  Run A rationale: Applied small compressive strain as a gentle attempt to soften slightly-strong *OH on (101) while preserving chemistry; it instead increased binding strength and destabilized other facets.
+
+- LaCuO3 (mp-3474) (111): 0.0746 eV
+- LaCuO3 (mp-3474) (001): -0.1417 eV
+- LaCuO3 (mp-3474) (210): -0.5116 eV
+- LaCuO3 (mp-3474) (101): 1.1084 eV
+
+3- MnFe2O4 (mp-33708)
+  Chosen because: Close (101) 0.8766 eV is just below optimal; attempted to increase into 0.9–1.1 eV.
+  Reasoning: MnFe2O4 is a mixed Mn/Fe spinel chosen to probe bimetallic-site synergy (common ORR design motif); its near-target *OH adsorption suggested tunability, but strain drove the system away from optimal facets.
+  Planes requested: (101), (001), (111), (210), (100) (includes the Close-reported (101) and common facets).
+  Run A (strain-only, -3% tensile): (101) 0.3720 eV; (001) -0.5422 eV; (111) -0.4357 eV; (210) 0.0127 eV; (100) -0.8907 eV → no success.
+  Run A rationale: Used tensile strain to try to strengthen borderline *OH binding on (101) without changing composition; it substantially weakened/derailed adsorption across facets.
+
+- MnFe2O4 (mp-33708) (101): 0.8766 eV
+- MnFe2O4 (mp-33708) (001): 0.1399 eV
+- MnFe2O4 (mp-33708) (210): 0.075 eV
+- MnFe2O4 (mp-33708) (200): -0.5912 eV
+
+
+4- CaNiO2 (mp-1147749)
+  Chosen because: Near (001) 1.2370 eV (strong edge) with reasoning documented; attempted to reduce into optimal.
+  Reasoning: CaNiO2 is a reduced, infinite-layer–like Ni phase selected to test how oxygen deficiency shifts *OH adsorption relative to perovskite nickelates; its strong-binding (001) suggested potential for softening, but simple dopant/strain knobs were insufficient.
+  Planes requested: (001), (100), (110), (111), (210) (includes the Near-reported (001) and common cuts).
+  Run A (Ni→Co surface doping): (001) 1.2180 eV (still high); other facets mostly too strong/overbinding → no optimal.
+  Run A rationale: Introduced Co to weaken the overly strong *OH adsorption on square-planar Ni sites; it reduced binding only slightly and did not reach the optimal window.
+  Run B (Ni→Co surface doping, +2% compressive): (001) 1.1845 eV (still high) → no optimal.
+  Run B rationale: Combined Co substitution with compressive strain to amplify the weakening effect while keeping the same termination; the shift was still insufficient.
+  Run C (Ni→Fe surface doping): (001) 0.4371 eV (too weak) → no optimal.
+  Run C rationale: Tried Fe substitution as a stronger electronic perturbation to soften adsorption; it over-softened *OH into an unphysically weak-binding regime.
+  Outcome: no facet reached 0.9–1.1 eV in these attempts.
+  Reasoning: CaNiO2 is a more reduced, infinite-layer–like Ni phase inspired by LaNiO2 and CaNiO3, chosen to see how oxygen deficiency shifts *OH adsorption. On its (001) surface AdsorbML predicts E_ads ≈1.24 eV, toward the strong-binding edge of the near window, indicating that square-planar Ni binds *OH more strongly than the more three-dimensional nickelates already in your dataset.
+
+- CaNiO2 (mp-1147749) (001): 1.2370 eV
+
+5- Sr2MnO4 (mp-18978)
+  Chosen because: Near (101) 0.7463 eV (weak side) with reasoning documented; attempted to strengthen adsorption into optimal.
+  Reasoning: Sr2MnO4 is an RP Mn oxide chosen to test whether layering (vs 3D perovskites) shifts Mn–O reactivity; it began weak on *OH, making it a candidate for strengthening via strain/doping, but remained sub-optimal.
+  Planes requested: (101), (001), (100), (111), (210) (includes the Near-reported (101) and common RP cuts).
+  Run A (strain-only, +3% compressive): best facets (101) 0.7567 eV, (001) 0.7758 eV, (111) 0.8216 eV → still weak.
+  Run A rationale: Applied compressive strain to strengthen weak *OH adsorption while keeping composition fixed; it increased adsorption only modestly and stayed below 0.9 eV.
+  Run B (Mn→Ti surface doping, +3% compressive): (001) 0.7004 eV and other facets ≤0.70 eV → no optimal.
+  Run B rationale: Introduced Ti to tune Mn-centered surface reactivity under the same strain; it further weakened adsorption, moving away from the target.
+
+- Sr2MnO4 (mp-18978) (101): 0.7463 eV
+
+6- SrRuO3 (mp-22534)
+  Chosen because: Near (001) 0.7271 eV (weak side) with reasoning documented; attempted to strengthen adsorption into optimal.
+  Reasoning: SrRuO3 is a Ru-perovskite analogue included because Ru oxides are high-activity oxygen electrocatalysts; its weak-binding (001) tested whether strain could push Ru–O surfaces toward the *OH optimum, but it did not reach 0.9–1.1 eV.
+  Planes requested: (001), (100), (110), (111), (210) (includes the Near-reported (001) and common perovskite cuts).
+  Run A (strain-only, -5% tensile): (001) 0.8765 eV (still below optimal); other facets overbound → no success.
+  Run A rationale: Used large tensile strain to strengthen adsorption on a weak-binding facet without changing chemistry; it improved (001) but still fell short of the optimal band while other facets misbehaved.
+  Reasoning: SrRuO3 is a 4d ruthenate perovskite chosen as a Ru-based analogue to SrNiO3 and SrFeO3, motivated by the strong OER activity of RuO2 in your inspiration set. The (001) surface has E_ads ≈0.73 eV, placing it in the near window on the weak-binding side and suggesting that SrRuO3 (001) is less active than RuO2 but still in a regime where *OH adsorption is not prohibitively weak.
+
+- SrRuO3 (mp-22534) (001): 0.7271 eV
+
+7- FeO (mp-756436)
+  Chosen because: Near (001) 0.7784 eV (weak side); attempted to strengthen adsorption into optimal.
+  Reasoning: FeO is a simple Fe2+ oxide reference for isolating “single-site” Fe–O chemistry; it was screened to compare against Fe-perovskites/spinels, but strain did not yield a balanced *OH binding facet.
+  Planes requested: (001), (101), (210), (200), (111) (mix of low-index and higher-index cuts).
+  Run A (strain-only, -5% tensile): (001) 0.2932 eV (too weak), (101) 2.0144 eV (too weak), (210) -0.0413 eV, (111) -1.3268 eV; (200) error "No valid configurations found" → no success.
+  Run A rationale: Applied large tensile strain to strengthen weak-binding facets; the response was non-uniform across terminations and did not generate any facet in 0.9–1.1 eV.
+
+  - FeO (mp-756436) (001): 0.7784 eV
+  - FeO (mp-756436) (210): -0.8695 eV
+  - FeO (mp-756436) (200): 0.2689 eV
+
+
+8- ZnAl2O4 (mp-2908)
+  Chosen because: Near (001) 1.2535 eV (strong edge); attempted to reduce binding into optimal.
+  Reasoning: ZnAl2O4 is a stable, non-redox spinel used as a structural/ionicity comparator; its strong *OH binding on (001) tested whether purely elastic tuning can soften adsorption in a “chemically inert” spinel, but it remained too strong/unstable.
+  Planes requested: (001), (210), (100), (110), (111) (includes Near-reported facets and common spinel cuts).
+  Run A (strain-only, +5% compressive): (001) 1.5517 eV, (100) 1.8082 eV, (111) -1.8869 eV; (110)/(210) error "Slab not tiled" → no success.
+  Run A rationale: Used aggressive compressive strain to attempt to soften strong *OH adsorption on (001) without changing chemistry; it pushed binding further from optimal and triggered slab-generation issues.
+
+  - ZnAl2O4 (mp-2908) (001): 1.2535 eV
+  - ZnAl2O4 (mp-2908) (210): 1.2963 eV
+  - ZnAl2O4 (mp-2908) (101): -2.2381 eV
+
+
+Close (0.8–1.2 eV):
+
+
+9- FeNiO3 (mp-1272388) (101): 0.6416 eV
+  Reasoning: FeNiO3 was selected as a mixed Fe–Ni oxide to probe synergy between NiO- and Fe2O3-like motifs in a single phase. Its (101) surface binds *OH somewhat weaker than ideal (≈0.64 eV), making it slightly outside the strict optimal band but still in a regime where adsorption is moderate rather than strongly overbinding.
+
+10- Sr2NiO4 (oqmd-5631134) (111): 0.8331 eV
+  Reasoning: Sr2NiO4 is an alkaline-earth RP nickelate chosen as a charge-balanced, non-lanthanide reference to the La/Pr/Nd/Gd K2NiF4 nickelates. Its (111) surface has E_ads ≈0.83 eV, slightly weaker than optimal but close, indicating that replacing Ln3+ with Sr2+ and adjusting Ni valence softens *OH binding while keeping it in a useful regime.
+
+Near (0.7–1.3 eV)
+11- NiFe2O4 (mp-22684) (001): 0.7186 eV
+  Reasoning: NiFe2O4 is a classic ferrite spinel used as a mixed-site ORR comparator; it sits near the lower edge of the *OH window, indicating weak-binding behavior that can inform where Ni/Fe spinels fall on the ORR volcano.
+- NiFe2O4 (mp-22684) (200): 0.7111 eV
+- NiFe2O4 (mp-22684) (101): -0.3778 eV
+- NiFe2O4 (mp-22684) (210): 0.3391 eV
+12- LiFe2O4 (mp-25386) (001): 0.7298 eV
+  Reasoning: LiFe2O4 was included as an alkali-containing ferrite to test how highly ionic A-site chemistry shifts Fe–O reactivity; its near-lower-edge *OH adsorption suggests relatively easy *OH desorption (weak binding).
+- LiFe2O4 (mp-25386) (111): -1.0904 eV
+- LiFe2O4 (mp-25386) (101): -0.0061 eV
+- LiFe2O4 (mp-25386) (210): 0.6019 eV
+13- CuFe2O4 (mp-770107) (001): 0.7448 eV
+  Reasoning: CuFe2O4 was chosen as a Cu-containing ferrite to broaden B-site chemistry beyond Ni/Co; its *OH adsorption near ~0.74 eV places it on the weak-binding side, useful for mapping how Cu affects ferrite ORR descriptors.
+- CuFe2O4 (mp-770107) (111): -2.9012 eV
+- CuFe2O4 (mp-770107) (101): -0.3075 eV
+- CuFe2O4 (mp-770107) (210): 0.3122 eV
+
+14- BiFeO3 (mp-23501) (101): 0.7912 eV
+  Reasoning: BiFeO3 is a polar/ferroelectric perovskite included to test whether Bi-based A-site chemistry yields distinct adsorption behavior; its (101) *OH binding is moderately weak (~0.79 eV), placing it near the close window.
+- BiFeO3 (mp-23501) (001): 0.4271 eV
+- BiFeO3 (mp-23501) (210): 0.1323 eV
+- BiFeO3 (mp-23501) (200): -0.0529 eV
+
+15- MgO (mp-1265) (210): 1.2428 eV
+  Reasoning: MgO is a simple ionic oxide reference often used to benchmark “non-redox” adsorption; its (210) strong *OH binding (~1.24 eV) helps delimit how purely ionic surfaces can overbind relative to transition-metal oxides.
+- MgO (mp-1265) (001): 2.3415 eV
+- MgO (mp-1265) (101): 0.6085 eV
+- MgO (mp-1265) (200): 2.3409 eV
+
+16- Ga2O3 (mp-1243) (111): 0.7936 eV
+  Reasoning: Ga2O3 is a stable post-transition-metal oxide included as a non-redox comparator; its moderately weak *OH binding on (111) places it near the close window and provides contrast to Co/Ni/Fe oxides.
+- Ga2O3 (mp-1243) (101): -1.2526 eV
+- Ga2O3 (mp-1243) (210): -1.2836 eV
+- Ga2O3 (mp-1243) (200): -1.164 eV
+
+17- TiFe2O4 (mp-780585) (001): 0.7547 eV
+  Reasoning: TiFe2O4 was included to test how a d0 cation (Ti) mixed into an Fe-oxide spinel shifts adsorption; its weak-binding *OH values indicate it likely sits on the low-activity side of the ORR volcano.
+- TiFe2O4 (mp-780585) (111): -0.3548 eV
+- TiFe2O4 (mp-780585) (101): -1.2002 eV
+- TiFe2O4 (mp-780585) (210): -1.1122 eV
+
+18- LaNiO3 (mp-19339) (101): 1.2836 eV
+  Reasoning: LaNiO3 is a flagship rare-earth nickelate perovskite often discussed for oxygen electrocatalysis; it was included as a reference point even though the sampled (101) strongly overbinds *OH (~1.28 eV), highlighting facet sensitivity.
+- LaNiO3 (mp-19339) (111): -0.0733 eV
+- LaNiO3 (mp-19339) (001): -0.4151 eV
+- LaNiO3 (mp-19339) (210): -0.6397 eV
+
+19- SrCoO3 (mp-505766) (111): 0.7030 eV
+  Reasoning: SrCoO3 is the Co analogue of SrNiO3 and LaCoO3, included to extend your perovskite screening along the B-site from Ni to Co. Its (111) facet gives E_ads ≈0.70 eV, just inside the near window on the weak-binding side, suggesting slightly easier *OH desorption than SrNiO3 while maintaining reasonably strong adsorption.
+
+
+20- SrFeO3 (mp-510624) (001): 0.7433 eV
+  Reasoning: SrFeO3 was targeted as the Sr counterpart to BaFeO3 and complements existing Fe perovskites like LaFeO3 and Sr2FeO4. The (001) surface yields E_ads ≈0.74 eV, in the near-optimal regime with moderately weak *OH binding, consistent with a relatively oxidized Fe–O network that favors desorption over very strong chemisorption.
+
+
+21- Ba2MnO4 (mp-753330) (101): 0.7669 eV
+  Reasoning: Ba2MnO4 is the Ba analogue of Sr2MnO4, used to test how replacing Sr with Ba in the RP framework affects Mn–O bonding and *OH adsorption. The (101) surface has E_ads ≈0.77 eV, again in the near-optimal regime on the weak-binding side, consistent with layered Ba–Mn oxides promoting somewhat easier *OH desorption than fully 3D BaMnO3.
+
+22- NdNiO3 (mp-22106) (111): 0.6999 eV
+  Reasoning: NdNiO3 is a canonical rare-earth nickelate perovskite, selected as the Nd analogue of LaNiO3 and PrNiO3 to complete the early LnNiO3 series. Its (111) surface binds *OH at ≈0.70 eV, right at the lower edge of the near window, indicating relatively weak adsorption compared to your best nickelate and ruthenate surfaces but still within the specified 0.7–1.3 eV band.
+ 
+23- Gd2CoO4 (oqmd-5233083) (111): 0.7364 eV
+  Reasoning: Gd2CoO4 is a Co-based layered oxide chosen as an RP-like analogue to the Gd nickelates, allowing comparison between Ni- and Co-centered K2NiF4-type chemistries. Its (111) surface gives an adsorption energy of ≈0.74 eV, in the near window but weaker than the best Ni-based RP surfaces, consistent with generally weaker *OH binding on Co compared to Ni in this structural motif.
+
+Away (outside 0.7–1.3 eV)
+24- BiVO4 (mp-545850) (111): -0.8152 eV
+  Reasoning: BiVO4 was included as a common oxide photo/electrocatalyst benchmark; its predicted *OH adsorption is far from balanced on the sampled facets (strongly non-optimal), so it serves as a clear “screened out” comparator for ORR by the *OH descriptor.
+- BiVO4 (mp-545850) (210): -1.9632 eV
+- BiVO4 (mp-545850) (211): 0.5736 eV
+
+25- SnO2 (mp-856) (111): 0.5884 eV
+  Reasoning: SnO2 is a widely used, stable oxide support; it was screened as an inert comparator and shows systematically weak-binding *OH on common facets, placing it off the ORR optimum by this descriptor.
+- SnO2 (mp-856) (101): 0.6239 eV
+- SnO2 (mp-856) (210): 0.3538 eV
+- SnO2 (mp-856) (200): 0.2026 eV
+
+
+26- IrO2 (mp-2723) (111): -0.5425 eV
+  Reasoning: IrO2 is a flagship oxygen electrocatalyst (especially for OER) and was included as a sanity-check reference; the sampled terminations here bind *OH far too strongly/atypically, pushing it outside the desired ORR *OH window in this dataset.
+- IrO2 (mp-2723) (001): -0.169 eV
+- IrO2 (mp-2723) (210): -4.2982 eV
+- IrO2 (mp-2723) (200): -4.501 eV
+
+
+27- MnO2 (mp-510408) (111): -0.206 eV
+  Reasoning: MnO2 was screened as a common Mn-oxide ORR motif; the sampled facets show strong overbinding/instability for *OH relative to the target window, indicating poor balance by this descriptor.
+- MnO2 (mp-510408) (101): 0.6614 eV
+- MnO2 (mp-510408) (210): 0.089 eV
+- MnO2 (mp-510408) (200): 0.116 eV
+
+28- CoFe2O4 (mp-753222) (001): 0.5694 eV
+  Reasoning: CoFe2O4 is a canonical mixed Co/Fe spinel often discussed for oxygen electrocatalysis; here it trends weak-binding on *OH (and inconsistent across facets), placing it away from the ORR optimum.
+- CoFe2O4 (mp-753222) (101): -0.4781 eV
+- CoFe2O4 (mp-753222) (210): 0.3736 eV
+- CoFe2O4 (mp-753222) (200): 0.5686 eV
+
+
+29- LaCoO3 (mp-510611) (111): 0.5944 eV
+  Reasoning: LaCoO3 is a common perovskite ORR/OER benchmark; its sampled facets bind *OH too weakly (and inconsistently), placing it away from the optimal ORR *OH band in this screening.
+- LaCoO3 (mp-510611) (210): 0.2342 eV
+
+
+30- Ca2Fe2O5 (mp-1096887) (001): -1.2699 eV
+  Reasoning: Ca2Fe2O5 (brownmillerite) was included to test oxygen-vacancy-rich frameworks; its sampled terminations overbind *OH strongly (negative/very large magnitude), making it non-ideal for ORR by the *OH descriptor.
+- Ca2Fe2O5 (mp-1096887) (101): -0.3431 eV
+- Ca2Fe2O5 (mp-1096887) (210): -0.1633 eV
+- Ca2Fe2O5 (mp-1096887) (200): -0.9479 eV
+
+
+31- LaCrO3 (mp-19357) (111): -1.8084 eV
+  Reasoning: LaCrO3 was screened as a Cr-perovskite (different B-site electronic structure) for completeness; it strongly overbinds *OH on sampled facets, placing it far from the ORR optimum.
+- LaCrO3 (mp-19357) (001): -1.402 eV
+- LaCrO3 (mp-19357) (101): -0.7288 eV
+- LaCrO3 (mp-19357) (210): -1.8498 eV
+
+
+32- CoCr2O4 (mp-20758) (001): -0.0428 eV
+  Reasoning: CoCr2O4 was included as a Co/Cr spinel to diversify spinel chemistry; it binds *OH far too strongly/atypically on key facets, making it a clear negative result for ORR balance.
+- CoCr2O4 (mp-20758) (101): -0.6631 eV
+- CoCr2O4 (mp-20758) (210): 0.1315 eV
+- CoCr2O4 (mp-20758) (200): -0.1345 eV
+
+
+33- CoMn2O4 (mp-1222025) (001): 0.3778 eV
+  Reasoning: CoMn2O4 was screened as a Co/Mn spinel ORR motif; its *OH adsorption is generally too weak on sampled facets, placing it away from the volcano peak.
+- CoMn2O4 (mp-1222025) (101): -0.4175 eV
+- CoMn2O4 (mp-1222025) (210): -0.0491 eV
+
+
+34- CaFe2O4 (mp-1405146) (111): -4.0104 eV
+  Reasoning: CaFe2O4 was included as an Fe-oxide polymorph comparator; the sampled facets show extreme overbinding/instability for *OH, clearly outside the ORR design window.
+- CaFe2O4 (mp-1405146) (001): 0.6888 eV
+- CaFe2O4 (mp-1405146) (101): -1.1652 eV
+- CaFe2O4 (mp-1405146) (210): -0.1694 eV
+
+
+35- ZnFe2O4 (mp-19313) (001): 0.6218 eV
+  Reasoning: ZnFe2O4 is a common ferrite spinel with a closed-shell A-site (Zn2+) that tunes Fe-site reactivity; it trends weak-binding on *OH and sits away from the optimal ORR window in this screening.
+- ZnFe2O4 (mp-19313) (101): -0.54 eV
+- ZnFe2O4 (mp-19313) (210): 0.3476 eV
+- ZnFe2O4 (mp-19313) (200): 0.6216 eV
+
+
+36- Fe2O3 (mp-19770) (101): -0.0844 eV
+  Reasoning: Fe2O3 is a foundational Fe-oxide benchmark for oxygen electrochemistry; the sampled facets overbind *OH or behave non-ideally relative to the target band, serving as a baseline “too strong / unstable” reference.
+- Fe2O3 (mp-19770) (210): 0.1983 eV
+- Fe2O3 (mp-19770) (200): 0.465 eV
+- Fe2O3 (mp-19770) (211): 0.3795 eV
+
+
+37- LaMnO3 (mp-19168) (111): -1.0685 eV
+  Reasoning: LaMnO3 is a canonical Mn-perovskite ORR benchmark; here its sampled facets overbind *OH strongly, placing it away from the optimal ORR *OH region in this dataset.
+- LaMnO3 (mp-19168) (001): -0.7994 eV
+- LaMnO3 (mp-19168) (101): -0.0601 eV
+- LaMnO3 (mp-19168) (210): -0.8765 eV
+
+
+38- Cu2O (mp-361) (101): 1.3448 eV
+  Reasoning: Cu2O was included as a Cu-oxide comparator relevant to oxygen chemistry; its (101) binds *OH too strongly (>1.3 eV) while other facets are inconsistent, placing it away from the desired ORR balance.
+- Cu2O (mp-361) (210): 0.0801 eV
+- Cu2O (mp-361) (200): -0.5835 eV
+- Cu2O (mp-361) (211): -0.9556 eV
+
+
+39- LaFeO3 (mp-22590) (111): -0.891 eV
+  Reasoning: LaFeO3 is a standard Fe-perovskite ORR benchmark; the sampled facets overbind *OH substantially, placing it outside the target window and helping contrast with BaFeO3/SrFeO3 which were closer to optimal.
+- LaFeO3 (mp-22590) (001): -0.1533 eV
+- LaFeO3 (mp-22590) (101): -1.0141 eV
+- LaFeO3 (mp-22590) (210): -1.5173 eV
+
+
+40- BeO (mp-2542) (111): -5.7526 eV
+  Reasoning: BeO was screened as an extreme ionic-oxide comparator; it overbinds *OH catastrophically on sampled facets, serving as a clear “non-viable” reference point.
+- BeO (mp-2542) (001): -3.7214 eV
+- BeO (mp-2542) (101): -3.5204 eV
+- BeO (mp-2542) (210): -4.2542 eV
+
+
+41- WO3 (mp-19390) (111): -3.6976 eV
+  Reasoning: WO3 was included as a common transition-metal oxide benchmark; its sampled facets show severe overbinding for *OH, placing it far from balanced ORR adsorption in this screening.
+- WO3 (mp-19390) (101): -2.2279 eV
+- WO3 (mp-19390) (210): 0.1892 eV
+- WO3 (mp-19390) (200): -0.0179 eV
+
+
+42- CeO2 (mp-20194) (101): -0.24 eV
+  Reasoning: CeO2 is a canonical reducible oxide/support with oxygen-vacancy chemistry; it was screened as a reference, and its sampled facet overbinds *OH by this descriptor, indicating overly reactive adsorption sites here.
+- CeO2 (mp-20194) (210): -3.7007 eV
+
+
+43- Sr2FeO4 (mp-19102) (101): 0.6148 eV
+  Reasoning: Sr2FeO4 is an RP Fe oxide included to compare layered vs 3D Fe perovskites; it remains weak-binding for *OH on sampled facets, placing it below the ORR optimum.
+- Sr2FeO4 (mp-19102) (210): -0.6157 eV
+
+44- YNiO3 (mp-19242) (111): -0.0069 eV
+  Reasoning: YNiO3 was included as an extreme A-site contraction case in nickelates; it shows strong overbinding/instability for *OH on sampled facets, indicating poor ORR balance.
+- YNiO3 (mp-19242) (001): -1.3848 eV
+- YNiO3 (mp-19242) (210): -1.4084 eV
+
+
+45- CoO (mp-19128) (001): -3.1918 eV
+  Reasoning: CoO is a simple Co2+ oxide reference for spinel/perovskite comparisons; its sampled facets overbind *OH strongly or behave inconsistently, placing it away from the ORR optimum.
+- CoO (mp-19128) (101): 0.3661 eV
+- CoO (mp-19128) (210): 0.1001 eV
+- CoO (mp-19128) (200): 0.1914 eV
+
+46- ZnO (mp-2133) (001): -1.2377 eV
+  Reasoning: ZnO is a common oxide support/reference; its facets are largely non-optimal for *OH (either overbinding or too weak), serving as a baseline “not ORR-balanced” comparator.
+- ZnO (mp-2133) (101): -1.1724 eV
+- ZnO (mp-2133) (210): 1.8007 eV
+- ZnO (mp-2133) (200): 1.4039 eV
+
+
+47- MnO (mp-19006) (210): -0.3315 eV
+  Reasoning: MnO was screened as the Mn2+ endmember reference; it overbinds *OH on sampled facets and is far from the desired ORR adsorption regime.
+- MnO (mp-19006) (200): -0.6783 eV
+
+
+48- CuO (mp-1692) (001): -0.8298 eV
+  Reasoning: CuO was included as a Cu2+ oxide comparator; it shows strong overbinding/instability for *OH on key facets, placing it away from balanced ORR adsorption.
+- CuO (mp-1692) (101): -0.8786 eV
+- CuO (mp-1692) (210): -3.0836 eV
+- CuO (mp-1692) (200): 2.0809 eV
+
+
+49- ZnCr2O4 (mp-19410) (111): -1.8697 eV
+  Reasoning: ZnCr2O4 was screened as a Cr-spinel with a closed-shell A-site; it overbinds *OH on sampled facets and is far from the ORR optimal window by this descriptor.
+- ZnCr2O4 (mp-19410) (001): -0.7693 eV
+- ZnCr2O4 (mp-19410) (101): -0.8278 eV
+- ZnCr2O4 (mp-19410) (210): -0.4642 eV
+
+
+50- MgFe2O4 (mp-608016) (001): 0.6442 eV
+  Reasoning: MgFe2O4 was included as an alkaline-earth ferrite spinel to compare with Ni/Co ferrites; it trends weak-binding on *OH, placing it below the ORR optimum.
+- MgFe2O4 (mp-608016) (101): -0.996 eV
+- MgFe2O4 (mp-608016) (210): -0.0409 eV
+- MgFe2O4 (mp-608016) (200): 0.6626 eV
+
+
+51- In2O3 (mp-22598) (001): -0.8755 eV
+  Reasoning: In2O3 is a common post-transition-metal oxide support/catalyst benchmark; it overbinds *OH on sampled facets, placing it away from balanced ORR adsorption in this screening.
+- In2O3 (mp-22598) (101): -0.056 eV
+- In2O3 (mp-22598) (210): -0.5376 eV
+- In2O3 (mp-22598) (200): -0.8753 eV
+
+
+52- CdFe2O4 (mp-21333) (001): 0.3006 eV
+  Reasoning: CdFe2O4 was included as a heavier A-site ferrite spinel comparator; it binds *OH too weakly on sampled facets, placing it far below the ORR optimum.
+- CdFe2O4 (mp-21333) (101): -0.4429 eV
+- CdFe2O4 (mp-21333) (210): 0.228 eV
+- CdFe2O4 (mp-21333) (200): 0.2947 eV
+
+53- Ca2TiO4 (mp-1096860) (110): -2.8770 eV
+  Reasoning: Ca2TiO4 is the n=1 Ruddlesden–Popper analogue of CaTiO3, selected to test whether layered perovskites moderate *OH binding. Its (110) surface overbinds *OH strongly (≈−2.9 eV), placing it well outside the desired 0.7–1.3 eV window.
+
+54- CaTiO2 (mp-1385378) (001): -3.2494 eV
+  Reasoning: CaTiO2 was chosen as a more reduced Ca–Ti–O phase to see if lowering oxygen content weakens adsorption compared to CaTiO3. The (001) surface binds *OH extremely strongly (≈−3.25 eV), indicating overly reactive sites that are far from the optimal binding regime.
+

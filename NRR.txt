@@ -1,0 +1,516 @@
+Success:
+
+Adsorbates (assumed if not explicitly stated): *N and *N2.
+  - *N is used as a proxy for the “activated N”/N–metal bond strength (too weak → poor activation; too strong → poisoning).
+  - *N2 captures molecular nitrogen adsorption/site-blocking; comparing *N vs *N2 helps triage whether the surface prefers dissociation/activation vs molecular coverage.
+  - Δ ≡ E_N − E_N2 (positive means *N is less stable than *N2; negative means *N is more stable than *N2).
+
+1. Material: CoNi  (CoNi, mp-1006883)
+  Facet (111): E_N ≈ -0.54 eV, E_N2 ≈ -0.65 eV, Δ ≈ +0.11 eV
+  Facet (211): E_N ≈ -0.61 eV, E_N2 ≈ -0.66 eV, Δ ≈ +0.06 eV
+  Selection rationale: Co–Ni alloys are inexpensive, conductive, and offer tunable N-binding via alloy/ensemble effects while staying away from extreme early‑TM overbinding.
+  Reasoning: Both facets bind *N near the weak end of the target window with *N slightly more stable than *N2, which should favor desorption and NRR selectivity over overly strong adsorption.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): baseline multi-facet check to confirm E_N in-window and Δ > 0 on representative terrace/step sites.
+  success after 1 runs including run with no modifications.
+
+2. Material: RhCo  (CoRh, mp-1226026)
+  Facet (100): E_N ≈ -0.63 eV, E_N2 ≈ -0.77 eV, Δ ≈ +0.14 eV
+  Selection rationale: Adding a noble-metal component (Rh) to Co is a standard way to soften overly reactive Co-like sites while preserving activation at undercoordinated ensembles.
+  Reasoning: *N sits mid-window with a moderate positive Δ, indicating activated nitrogen that is not too strongly trapped and with *N significantly preferred over *N2 to suppress excessive N2 adsorption.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): single-shot facet evaluation because the pristine surface already satisfies E_N/Δ thresholds.
+  success after 1 runs including run with no modifications.
+
+3. Material: IrMo  (MoIr, mp-1221414)
+  Facet (211): E_N ≈ -0.64 eV, E_N2 ≈ -0.76 eV, Δ ≈ +0.12 eV
+  Selection rationale: Mo is a classic N-activating element while Ir can moderate binding/poisoning; the alloy targets balanced activation without the extreme overbinding of pure early TMs.
+  Reasoning: The (211) step on IrMo has moderately strong *N binding and a clear preference of *N over *N2, suggesting good N activation and reduced blocking by molecular nitrogen.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): direct test of a step facet (211) where N2 activation is most likely.
+  success after 1 runs including run with no modifications.
+
+4. Material: HfPd  (HfPd, mp-1002106)
+  Facet (211): E_N ≈ -1.84 eV, E_N2 ≈ -2.24 eV, Δ ≈ +0.40 eV
+  Selection rationale: Early TM–Pd intermetallics are screened to access stronger N activation motifs (Hf) tempered by a late TM (Pd) to avoid complete poisoning.
+  Reasoning: The HfPd (211) step binds *N on the strong side of your optimal window while making *N noticeably more stable than *N2, indicating highly activated nitrogen that still favors atomic adsorption over molecular coverage.
+  Run rationale (per run/trial):
+    Run 0 (no modifications): step-site probe to see whether an early‑TM ensemble can meet Δ and still remain within the E_N window.
+  success after 1 runs including run with no modifications.
+
+
+5. Material: PtFe  (FePt, mp-2260)
+  Facet (111): E_N ≈ -0.90 eV, E_N2 ≈ -0.88 eV, Δ ≈ -0.02 eV
+  Selection rationale: Fe–Pt is a canonical “reactive (Fe) + moderating (Pt)” bimetal where small electronic/strain tuning can move near-miss energetics across the Δ threshold.
+  Reasoning: *N is well within the optimal window and only marginally more stable than *N2, close to your Δ cutoff, so this facet should be active yet not dominated by molecular adsorption.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (111): E_N = -0.9015 eV, E_N2 = -0.8810 eV, Δ = -0.0206 eV (near-miss confirmed).
+    Trial 1 — strain +3% (compressive): E_N = -0.7889 eV, E_N2 = -0.8698 eV, Δ = +0.0809 eV → SUCCESS (now listed in Δ > 0 section above).
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): verify the near-miss Δ slightly < 0 before spending runs on tuning.
+    Run 1 (+3% compressive strain): adjust surface electronic structure to shift relative *N/*N2 stability and flip Δ positive while keeping E_N in-window.
+  success after 2 runs including run with no modifications.
+
+6. Material: FeNi  (FeNi, mp-2213)  [also represents NiFe]
+  Facet (100): E_N ≈ -0.92 eV, E_N2 ≈ -0.76 eV, Δ ≈ -0.15 eV
+  Selection rationale: Fe–Ni (tetrataenite-like) is a cheap, widely studied alloy where dual-site/ensemble effects can tune N activation and is a natural baseline for Fe–Ni “active motifs.”
+  Reasoning: The tetrataenite-like FeNi (100) surface binds *N at an intermediate strength with moderate preference over *N2, making it a good proxy for Fe–Ni dual sites in NRR.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (100): E_N = -0.9198 eV, E_N2 = -1.0507 eV, Δ = +0.1308 eV → SUCCESS (pristine; now listed in Δ > 0 section above).
+    Note: The initial screen likely landed on a different *N2 minimum; the new run finds a lower-energy *N2 configuration, flipping Δ’s sign.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): re-optimize adsorption minima to confirm whether Δ is robust to finding lower-energy *N2 geometries.
+  success after 1 runs including run with no modifications.
+
+7. Material: Ni4Mo  (Ni4Mo, mp-11507)  [NiMo]
+  Facet (111): E_N ≈ -0.73 eV, E_N2 ≈ -0.63 eV, Δ ≈ -0.10 eV
+  Facet (211): E_N ≈ -0.55 eV, E_N2 ≈ -0.42 eV, Δ ≈ -0.13 eV
+  Selection rationale: Ni–Mo is a classic electrocatalyst platform; Mo provides N-activation tendency while Ni moderates binding and offers scalable metallic conductivity.
+  Reasoning: Step and terrace sites on Ni4Mo both fall inside the optimal *N range with modest Δ, indicating Ni–Mo ensembles that can activate N without locking it too strongly on the surface.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (111): E_N = -0.7343 eV, E_N2 = -0.6310 eV, Δ = -0.1033 eV (near-miss confirmed).
+    Trial 1 — strain +3% (compressive) on (111): E_N = -0.8758 eV, E_N2 = -0.6068 eV, Δ = -0.2691 eV → fails Δ > -0.2 and farther from 0.
+    Trial 2 — strain -3% (tensile) on (111): E_N = -0.7685 eV, E_N2 = -0.6571 eV, Δ = -0.1115 eV → slightly worse.
+    Trial 3 — dope top Mo→Ni on (111): E_N = -0.6121 eV, E_N2 = -0.6288 eV, Δ = +0.0167 eV → SUCCESS (now listed in Δ > 0 section above).
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): confirm baseline Δ < 0 and set a reference geometry/energy for tuning.
+    Run 1 (+3% compressive strain): test whether compressive strain can improve Δ by shifting d-band/adsorption balance (it worsened here).
+    Run 2 (-3% tensile strain): test the opposite strain direction for sensitivity (no improvement).
+    Run 3 (top-layer Mo→Ni substitution): change the local adsorption ensemble to weaken over-stabilization of *N and nudge Δ across zero.
+  success after 4 runs including run with no modifications.
+
+8. Material: IrRe  (ReIr, mp-1219533)
+  Facet (111): E_N ≈ -0.76 eV, E_N2 ≈ -0.68 eV, Δ ≈ -0.08 eV
+  Facet (110): E_N ≈ -0.55 eV, E_N2 ≈ -0.48 eV, Δ ≈ -0.07 eV
+  Facet (211): E_N ≈ -0.94 eV, E_N2 ≈ -0.78 eV, Δ ≈ -0.16 eV
+  Selection rationale: Re–Ir alloys are screened as “late TM + refractory TM” mixes that can stabilize activated N intermediates on steps without falling into early‑TM overbinding extremes.
+  Reasoning: Across multiple facets, ReIr offers *N energies spanning the allowed range with Δ staying above -0.2 eV, suggesting Ir–Re sites that remain active without excessive accumulation of either *N or *N2.
+  Optimization / verification log:
+    Recomputed pristine (110): E_N = -0.5563 eV, E_N2 = -0.7037 eV, Δ = +0.1473 eV → SUCCESS (now listed in Δ > 0 section above).
+    Note: This flips Δ vs the initial screen, indicating the earlier run likely did not locate the lowest-energy *N2 configuration on this facet.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): verify Δ robustness by re-finding the lowest-energy *N2 minimum on the most promising facet.
+  success after 1 runs including run with no modifications.
+
+9. Material: CoPt  (PtCo, mp-1225998)  [previously: *N too weak on pristine facets]
+  Summary of new candidate facets:
+    Optimized (top Pt→Fe, +3% compressive strain):
+      Facet (100): E_N ≈ -0.6363 eV, E_N2 ≈ -0.7339 eV, Δ ≈ +0.0976 eV
+      Facet (110): E_N ≈ -0.6837 eV, E_N2 ≈ -0.9437 eV, Δ ≈ +0.2600 eV
+      Facet (211): E_N ≈ -0.6170 eV, E_N2 ≈ -0.9152 eV, Δ ≈ +0.2983 eV
+  Full history (5-plane screening each pass: (111),(100),(110),(211),(311)):
+    Pristine:
+      *N  : (111) -0.272, (100) -0.455, (110) -0.079, (211) -0.308, (311) +0.031
+      *N2 : (111) -0.813, (100) -0.305, (110) -0.600, (211) -0.757, (311) -0.580
+      Diagnosis: all facets fail E_N ≥ -0.5 eV (too weak/positive *N), despite Δ often being acceptable.
+    +3% compressive strain (pristine):
+      *N  : (111) +0.160, (100) -0.410, (110) +0.229, (211) -0.168, (311) -0.131
+      *N2 : (111) -0.253, (100) -0.732, (110) -0.533, (211) -0.758, (311) -0.458
+      Diagnosis: still too weak; strain alone does not move *N into the target window.
+    -3% tensile strain (pristine):
+      *N  : (111) +0.136, (100) +0.005, (110) +0.012, (211) -0.248, (311) -0.088
+      *N2 : (111) -0.821, (100) -0.731, (110) -0.639, (211) -0.752, (311) -0.779
+      Diagnosis: still too weak; tensile strain does not rescue *N binding.
+    Doping only (top Pt→Fe, no strain):
+      *N  : (111) -0.074, (100) -0.662, (110) +0.180, (211) -0.615, (311) -0.444
+      *N2 : (111) -0.819, (100) -0.439, (110) -0.637, (211) -0.771, (311) -0.800
+      Diagnosis: *N strengthens, but (100) fails Δ (Δ ≈ -0.223) and (311) remains too weak; (211) already becomes viable (Δ ≈ +0.156).
+    Doping + strain (top Pt→Fe, +3% compressive):
+      *N  : (111) +0.152, (100) -0.636, (110) -0.684, (211) -0.617, (311) -0.317
+      *N2 : (111) -0.803, (100) -0.734, (110) -0.944, (211) -0.915, (311) -0.788
+      Outcome: (100),(110),(211) meet both E_N and Δ thresholds.
+  Selection rationale: Co–Pt is a stable late‑TM alloy that is often too weak-binding for NRR in pristine form, making it a good target for “surface-site engineering” (single-atom substitution + strain) to reach the E_N window.
+  Reasoning: introducing a Fe surface atom increases N affinity on Co–Pt terraces/steps; mild compressive strain further tunes adsorption to the desired window while keeping Δ > -0.2 eV, preventing excessive stabilization of atomic *N relative to *N2.
+  Run rationale (per run/trial):
+    Run 0 (pristine 5-facet screen): confirm the failure mode is *N too weak across common low-index facets.
+    Run 1 (+3% compressive strain, pristine): test whether uniform strain can strengthen *N enough (it did not).
+    Run 2 (-3% tensile strain, pristine): check opposite strain direction as a control (also did not).
+    Run 3 (top Pt→Fe, no strain): introduce a stronger-binding surface site to pull E_N into window while monitoring Δ penalties.
+    Run 4 (top Pt→Fe with +3% compressive strain): combine electronic/strain tuning to satisfy both E_N and Δ constraints across multiple facets.
+  success after 5 runs including run with no modifications.
+
+  10. Material: PdRu  (PdRu, mp-1186459)  [previously: *N too weak on pristine facets]
+  Summary of new candidate facets:
+    Optimized (top Pd→Fe, no strain):
+      Facet (100): E_N ≈ -0.6162 eV, E_N2 ≈ -0.8383 eV, Δ ≈ +0.2221 eV
+    Optimized (top Pd→Fe, +3% compressive strain):
+      Facet (110): E_N ≈ -0.7104 eV, E_N2 ≈ -0.5420 eV, Δ ≈ -0.1684 eV
+      Facet (211): E_N ≈ -0.5384 eV, E_N2 ≈ -0.5718 eV, Δ ≈ +0.0334 eV
+  Full history (5-plane screening each pass: (111),(100),(110),(211),(311)):
+    Pristine:
+      *N  : (111) -0.344, (100) +0.192, (110) -0.083, (211) +0.223, (311) -0.232
+      *N2 : (111) -0.591, (100) -0.034, (110) -0.490, (211) -0.518, (311) -0.591
+      Diagnosis: all facets fail E_N ≥ -0.5 eV (too weak/positive *N).
+    Doping only (top Pd→Fe, no strain):
+      *N  : (111) -0.170, (100) -0.616, (110) -0.754, (211) -0.190, (311) -1.327
+      *N2 : (111) -0.527, (100) -0.838, (110) -0.525, (211) -0.262, (311) -0.535
+      Diagnosis: (100) becomes viable (Δ ≈ +0.222); (110) and (311) over-stabilize *N (Δ < -0.2).
+    Doping + strain (top Pd→Fe, +3% compressive):
+      *N  : (111) -0.128, (100) -0.365, (110) -0.710, (211) -0.538, (311) -1.134
+      *N2 : (111) -0.177, (100) -0.769, (110) -0.542, (211) -0.572, (311) -0.619
+      Outcome: (110) and (211) meet both E_N and Δ thresholds; (311) remains too Δ-negative.
+  Selection rationale: Pd–Ru is a late‑TM platform that is typically too weak for N activation, making it a clean case for testing whether single-site strengthening (Fe substitution) can create NRR-relevant adsorption without large Δ penalties.
+  Reasoning: substituting a surface Pd with Fe introduces a stronger-binding site that pulls *N into the desired range; strain can then fine-tune Δ by adjusting the relative stability of atomic vs molecular adsorption on the active ensemble.
+  Run rationale (per run/trial):
+    Run 0 (pristine 5-facet screen): confirm that the baseline issue is weak/positive *N adsorption.
+    Run 1 (top Pd→Fe, no strain): create a stronger-binding surface ensemble to move E_N into window and check which facets keep Δ acceptable.
+    Run 2 (top Pd→Fe with +3% compressive strain): tune adsorption balance on the doped surface to recover facets with both good E_N and Δ.
+  success after 3 runs including run with no modifications.
+
+  11. Material: TiPt3  (Pt3Ti, mp-12107)  [previously: one facet had E_N in window but Δ <= -0.2]
+  Summary of new candidate facets:
+    Optimized (top Pt→Fe, no strain):
+      Facet (110): E_N ≈ -0.5047 eV, E_N2 ≈ -0.8546 eV, Δ ≈ +0.3499 eV
+      Facet (311): E_N ≈ -1.1519 eV, E_N2 ≈ -1.3500 eV, Δ ≈ +0.1981 eV
+  Full history (5-plane screening each pass: (111),(100),(110),(211),(311)):
+    Pristine:
+      *N  : (111) +0.451, (100) -0.500, (110) -0.641, (211) +0.533, (311) +0.377
+      *N2 : (111) no valid configs, (100) -0.361, (110) -0.350, (211) -0.059, (311) -0.385
+      Diagnosis: (110) has E_N in window but Δ ≈ -0.292 (too Δ-negative); others fail E_N or are unstable for *N2.
+    ±3% strain (pristine):
+      +3%: (110) gives E_N ≈ -0.980, E_N2 ≈ -0.401 (Δ ≈ -0.579; worse); other facets remain too weak/unstable.
+      -3%: does not consistently stabilize *N2 and does not produce any Δ > -0.2 facet.
+    Doping only (top Pt→Fe, no strain):
+      *N  : (111) +0.406, (100) -1.548, (110) -0.505, (211) +0.477, (311) -1.152
+      *N2 : (111) -0.211, (100) -0.927, (110) -0.855, (211) -0.770, (311) -1.350
+      Outcome: (110) and (311) satisfy both E_N and Δ constraints; (100) becomes too Δ-negative (Δ ≈ -0.620).
+  Selection rationale: Pt3Ti is screened as an intermetallic with distinct site types (Pt-rich terraces/steps) where Δ issues can sometimes be corrected by localized site strengthening rather than global composition changes.
+  Reasoning: Fe substitution on Pt-rich surfaces corrects the overly strong preference for atomic *N (too Δ-negative) seen on the pristine TiPt3 (110), producing more balanced *N vs *N2 energetics while keeping *N in the target binding window.
+  Run rationale (per run/trial):
+    Run 0 (pristine 5-facet screen): identify whether any facet is close and diagnose whether the failure is Δ (rather than E_N).
+    Run 1 (±3% strain, pristine): test if global strain can fix Δ on the promising facet (it worsened/failed here).
+    Run 2 (top Pt→Fe, no strain): apply targeted site strengthening to rebalance *N vs *N2 stability and recover Δ.
+  success after 3 runs including run with no modifications.
+
+  12. Material: PtRh  (PtRh, mp-1219734)  [previously: *N too weak/positive on pristine facets]
+  Summary of new candidate facets:
+    Optimized (top Pt→Fe, no strain):
+      Facet (100): E_N ≈ -0.5490 eV, E_N2 ≈ -0.5956 eV, Δ ≈ +0.0467 eV
+      Facet (311): E_N ≈ -0.5427 eV, E_N2 ≈ -0.6427 eV, Δ ≈ +0.1000 eV
+  Full history (5-plane screening each pass: (111),(100),(110),(211),(311)):
+    Pristine:
+      *N  : (111) +0.664, (100) +0.444, (110) +0.256, (211) +0.144, (311) +0.675
+      *N2 : (111) -0.509, (100) -0.215, (110) -0.512, (211) -0.652, (311) -0.592
+      Diagnosis: all facets fail E_N ≥ -0.5 eV (too weak/positive *N).
+    Doping only (top Pt→Fe, no strain):
+      *N  : (111) +0.300, (100) -0.549, (110) +0.289, (211) +0.137, (311) -0.543
+      *N2 : (111) -0.523, (100) -0.596, (110) -0.931, (211) -0.555, (311) -0.643
+      Outcome: (100) and (311) satisfy both E_N and Δ constraints.
+  Selection rationale: Pt–Rh is an archetypal noble alloy expected to be too weak for *N, so it’s included as a “can site engineering rescue weak binders?” benchmark.
+  Reasoning: PtRh is too noble/weak-binding for *N in its pristine form; introducing a single Fe surface atom supplies the necessary binding strength while preserving a small positive Δ, indicating activated atomic nitrogen without a large thermodynamic penalty vs *N2.
+  Run rationale (per run/trial):
+    Run 0 (pristine 5-facet screen): confirm the weak-binding baseline across facets.
+    Run 1 (top Pt→Fe, no strain): introduce a localized stronger-binding site to move E_N into window while keeping Δ modest/positive.
+  success after 2 runs including run with no modifications.
+
+
+
+Failure:
+
+1. Material: Pd3Mo  (MoPd3, mp-1221429)
+  Facet (211): E_N ≈ -0.86 eV, E_N2 ≈ -0.71 eV, Δ ≈ -0.14 eV
+  Selection rationale: Pd–Mo intermetallics are screened to combine a late TM (Pd) with an N-activating element (Mo) while testing whether alloying can avoid early‑TM overbinding.
+  Reasoning: *N binding is near the volcano center while *N2 is only modestly weaker, giving sufficient driving force for N–N bond weakening without excessively favoring the molecular state.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (211): E_N = -0.8580 eV, E_N2 = -0.7143 eV, Δ = -0.1437 eV (near-miss confirmed).
+    Trial 1 — strain +3% (compressive): E_N = -0.6582 eV, E_N2 = -0.4624 eV, Δ = -0.1958 eV → worse.
+    Trial 2 — strain -3% (tensile): E_N = -0.8471 eV, E_N2 = -0.4730 eV, Δ = -0.3740 eV → worse.
+    Trial 3 — dope top Mo→Pd: E_N = -0.7983 eV, E_N2 = -0.3965 eV, Δ = -0.4018 eV → worse (atomic favored too strongly).
+    Trial 4 — dope top Pd→Mo: E_N = -1.2115 eV, E_N2 = -0.8628 eV, Δ = -0.3487 eV → worse (atomic favored too strongly).
+    Trial 5 — multi-facet (111/100/110/211/311) sweep attempted but AdsorbML tool calls timed out in this run → no alternate facet identified here.
+    Status: still Δ < 0 for tested modifications; keep as near-miss candidate pending successful multi-facet rerun.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): confirm the starting Δ < 0 on the most promising facet before exploring tuning.
+    Run 1 (+3% compressive strain): probe whether strain can improve Δ without pushing E_N out of window (it worsened).
+    Run 2 (-3% tensile strain): test opposite strain response (Δ became more negative).
+    Run 3 (top Mo→Pd substitution): reduce “Mo-like” character at the adsorption site to avoid over-stabilizing atomic *N (it overcorrected Δ).
+    Run 4 (top Pd→Mo substitution): add more Mo character to boost activation (it drove Δ too negative).
+    Run 5 (multi-facet sweep): search for a different facet/site that naturally satisfies Δ > 0 (attempt blocked by tool timeouts).
+
+2. Material: PdFe  (FePd, mp-2831)
+  Facet (111): E_N ≈ -1.01 eV, E_N2 ≈ -0.87 eV, Δ ≈ -0.14 eV
+  Facet (100): E_N ≈ -1.05 eV, E_N2 ≈ -0.99 eV, Δ ≈ -0.06 eV
+  Selection rationale: Fe–Pd is screened as a “Fe activation + Pd moderation” alloy that often lands near the N-binding sweet spot and is a natural comparator to Fe–Pt.
+  Reasoning: Both facets bind *N strongly but still inside your window; Δ remains above -0.2 eV, so *N is favored over *N2 without reaching the overbinding regime often associated with poor NRR selectivity.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (100): E_N = -1.0646 eV, E_N2 = -1.0417 eV, Δ = -0.0228 eV (near-miss confirmed).
+    Recomputed pristine (111): E_N = -3.0201 eV (fails E_N window; overbinding), E_N2 = -0.8728 eV.
+    Trial 1 — strain -3% (tensile) on (100): E_N = -1.0058 eV, E_N2 = -0.9902 eV, Δ = -0.0156 eV → improved but still < 0.
+    Trial 2 — strain -6% (tensile) on (100): E_N = -1.1430 eV, E_N2 = -1.0553 eV, Δ = -0.0877 eV → worse.
+    Trial 3 — strain +3% (compressive) on (100): E_N = -2.5843 eV (fails E_N window), E_N2 = -2.5669 eV, Δ = -0.0174 eV.
+    Trial 4 — dope top Fe→Pd on (100): E_N = -1.0083 eV, E_N2 = -0.9410 eV, Δ = -0.0673 eV → worse.
+    Trial 5 — dope top Pd→Fe on (100): E_N = -1.1149 eV, E_N2 = -0.8928 eV, Δ = -0.2221 eV → fails Δ > -0.2 constraint.
+    Status: no Δ > 0 success found on tested facet/mods; remains near-miss on (100).
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): validate whether a “near-miss” Δ on (100) is real and check if any facet is already disqualified by E_N overbinding (111 was).
+    Run 1 (-3% tensile strain on 100): attempt small strain tuning to nudge Δ toward 0 without changing composition.
+    Run 2 (-6% tensile strain on 100): extend strain magnitude to see if Δ crosses 0 (it moved the wrong way).
+    Run 3 (+3% compressive strain on 100): test opposite strain direction (it pushed E_N out of window by overbinding).
+    Run 4 (top Fe→Pd on 100): weaken the local active site to relieve atomic over-stabilization and potentially raise Δ (it worsened).
+    Run 5 (top Pd→Fe on 100): strengthen the local active site to rebalance *N/*N2 (it broke the Δ constraint).
+
+3. Material: CuFe  (FeCu, mp-1224945)
+  Facet (110): E_N ≈ -0.65 eV, E_N2 ≈ -0.47 eV, Δ ≈ -0.18 eV
+  Facet (211): E_N ≈ -0.99 eV, E_N2 ≈ -0.83 eV, Δ ≈ -0.16 eV
+  Selection rationale: Cu–Fe is screened as a “weak-binding diluent (Cu) + activating center (Fe)” alloy to test whether dilution can prevent Fe-like overbinding while keeping activation.
+  Reasoning: CuFe offers one weaker- and one stronger-binding facet within the allowed range; in both cases *N is favored over *N2 by less than 0.2 eV, consistent with reasonable activation and desorption balance.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (110): E_N = -0.6695 eV, E_N2 = -0.4680 eV, Δ = -0.2016 eV (borderline; slightly below the Δ > -0.2 cutoff depending on rounding).
+    Recomputed pristine (211): E_N = -1.0265 eV, E_N2 = -0.8263 eV, Δ = -0.2002 eV (borderline; slightly below cutoff depending on rounding).
+    Trial 1 — strain +3% (compressive) on (110): E_N = -0.6862 eV, E_N2 = -0.5622 eV, Δ = -0.1241 eV → closer to 0, still < 0.
+    Trial 2 — strain +6% (compressive) on (110): E_N = -0.8041 eV, E_N2 = -0.7120 eV, Δ = -0.0921 eV → closer to 0, still < 0.
+    Trial 3 — strain +12% (compressive) on (110): E_N = -0.7890 eV, E_N2 = -3.0620 eV, Δ = +2.2730 eV → SUCCESS by thresholds, but extreme strain + many anomalies (treat with caution).
+    Trial 4 — dope top Fe→Cu on (110): E_N = -0.6914 eV, E_N2 = -0.5747 eV, Δ = -0.1168 eV → improved but still < 0.
+    Trial 5 — dope top Cu→Fe on (110): E_N = -1.0514 eV, E_N2 = -0.4764 eV, Δ = -0.5750 eV → worse.
+    Trial 6 — strain ±3% on (211): +3% gives Δ = -0.2350 eV; -3% gives Δ = -0.2400 eV → both worse.
+    Status: Δ > 0 found only at very high strain; see Δ > 0 section above.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): verify whether borderline Δ values are reproducible on the key facets.
+    Run 1 (+3% compressive strain on 110): modest strain tuning to bring Δ closer to 0 without changing chemistry.
+    Run 2 (+6% compressive strain on 110): increase strain to test whether Δ can cross zero at still-reasonable deformation.
+    Run 3 (+12% compressive strain on 110): stress-test the descriptor with extreme strain to see if a formal “success” is even possible (flagged as anomalous).
+    Run 4 (top Fe→Cu on 110): weaken the adsorption ensemble to reduce atomic over-stabilization and raise Δ.
+    Run 5 (top Cu→Fe on 110): strengthen the adsorption ensemble as a counter-test (it over-stabilized *N and worsened Δ).
+    Run 6 (±3% strain on 211): check whether the step facet responds differently to strain (it did not).
+
+4. Material: FeMo  (FeMo, oqmd 4484232)
+  Facet (111): E_N ≈ -0.99 eV, E_N2 ≈ -0.99 eV, Δ ≈ -0.01 eV
+  Selection rationale: Fe–Mo is screened because Mo is a known N-activating element and Fe provides a catalytically relevant baseline; together they probe the “strong activation” region that can easily tip into poisoning.
+  Reasoning: Here *N and *N2 are nearly isoenergetic with *N in the ideal window, so both adsorption and desorption barriers should be moderate, which is favorable for turnover.
+  Optimization / re-evaluation log:
+    Recomputed pristine (111): E_N = -3.2547 eV, E_N2 = -2.2323 eV, Δ = -1.0224 eV → FAIL (E_N overbinds; not in the -0.5 to -2.0 eV window).
+    Trial 1 — dope top Mo→Pt (111): E_N = -1.7976 eV, E_N2 = -0.8097 eV, Δ = -0.9879 eV → E_N rescued into-window, but Δ remains strongly negative.
+    Trial 2 — dope top Mo→Pt + strain +3% (111): E_N = -1.5284 eV, E_N2 = -0.7577 eV, Δ = -0.7707 eV → improved but still Δ << 0.
+    Status: reclassified as NOT MEETING NRR CRITERIA (current recomputation overbinds *N); retained here to document the discrepancy from the earlier screen.
+    Note: Additional facets could not be re-screened in this round due to intermittent oqmd OPTIMADE timeouts (the oqmd structure ID was not returned on later searches).
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): sanity-check the earlier near-ideal descriptor result; found a lower-energy *N minimum leading to overbinding.
+    Run 1 (top Mo→Pt): replace an overly reactive local environment with Pt to reduce overbinding while staying metallic/ordered.
+    Run 2 (top Mo→Pt with +3% strain): attempt secondary tuning after site substitution to recover Δ and balance *N/*N2 (still too Δ-negative).
+
+5. Material: CoRu  (CoRu, mp-1225997)
+  Facet (111): E_N ≈ -0.67 eV, E_N2 ≈ -0.61 eV, Δ ≈ -0.06 eV
+  Selection rationale: Co–Ru is screened as a stable, conductive late‑TM alloy where Ru can shift Co reactivity and potentially yield moderate N binding without early‑TM-like poisoning.
+  Reasoning: CoRu (111) gives only a small stabilization of *N over *N2 while keeping *N in the desired range, suggesting a balanced surface that is not dominated by either atomic or molecular nitrogen.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (111): E_N = -0.6728 eV, E_N2 = -0.6125 eV, Δ = -0.0603 eV (near-miss confirmed).
+    Trial 1 — strain +3% (compressive): E_N = -0.6424 eV, E_N2 = -0.5708 eV, Δ = -0.0716 eV → worse.
+    Trial 2 — strain -3% (tensile): E_N = -0.8066 eV, E_N2 = -0.6476 eV, Δ = -0.1590 eV → worse.
+    Trial 3 — dope top Co→Ru: E_N = -0.6690 eV, E_N2 = -0.6264 eV, Δ = -0.0426 eV → closest to Δ = 0, still negative.
+    Trial 4 — dope top Co→Ru + strain +6%: E_N = -0.7289 eV, E_N2 = -0.5613 eV, Δ = -0.1675 eV → worse.
+    Status: no Δ > 0 success found in tested mods; keep as near-miss candidate.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): confirm Δ is slightly negative but close enough to justify tuning.
+    Run 1 (+3% compressive strain): test mild strain tuning of Δ (it moved away from 0).
+    Run 2 (-3% tensile strain): test the opposite strain direction (Δ worsened).
+    Run 3 (top Co→Ru substitution): make the adsorption site more Ru-like to soften atomic preference and raise Δ toward 0 (closest result).
+    Run 4 (top Co→Ru with +6% strain): explore a stronger tuning knob combination (did not help).
+
+6. Material: Ni2Mo  (Ni2Mo, mp-784630)
+  Facet (111): E_N ≈ -0.71 eV, E_N2 ≈ -0.60 eV, Δ ≈ -0.11 eV
+  Selection rationale: Ni2Mo is screened as a Ni–Mo motif variant to test how Mo fraction/site density shifts Δ compared to Ni4Mo, while staying in a scalable alloy family.
+  Reasoning: Ni2Mo (111) behaves similarly to Ni4Mo but with slightly weaker differential binding, still satisfying your Δ constraint and providing a plausible Ni–Mo active motif.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (111): E_N = -0.7321 eV, E_N2 = -0.6021 eV, Δ = -0.1301 eV (near-miss confirmed).
+    Trial 1 — dope top Mo→Ni: E_N = -0.7144 eV, E_N2 = -0.6086 eV, Δ = -0.1057 eV → improved but still Δ < 0.
+    Status: no Δ > 0 success found in tested mods; keep as near-miss candidate.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): establish baseline Δ < 0 on the simplest facet.
+    Run 1 (top Mo→Ni): reduce Mo character at the adsorption site to see if Δ can be raised toward 0 without leaving the E_N window.
+
+7. Material: RuFe  (FeRu, mp-1224803)
+  Facet (111): E_N ≈ -0.71 eV, E_N2 ≈ -0.59 eV, Δ ≈ -0.12 eV
+  Facet (211): E_N ≈ -0.86 eV, E_N2 ≈ -0.72 eV, Δ ≈ -0.14 eV
+  Selection rationale: Fe–Ru is screened to compare how replacing Pd/Pt with Ru changes Fe-driven activation while preserving metallic stability and potentially improved kinetics at steps.
+  Reasoning: RuFe combines moderate *N strength with relatively small Δ, giving Fe–Ru surfaces that should activate N while maintaining some reversibility of nitrogen adsorption.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (111): E_N = -0.7282 eV, E_N2 = -0.5879 eV, Δ = -0.1403 eV (near-miss confirmed).
+    Trial 1 — dope top Fe→Ru on (111): E_N = -0.6948 eV, E_N2 = -0.5844 eV, Δ = -0.1105 eV → improved but still Δ < 0.
+    Status: no Δ > 0 success found in tested mods; keep as near-miss candidate.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): validate baseline Δ and choose the facet to tune.
+    Run 1 (top Fe→Ru on 111): soften the local Fe-like adsorption ensemble to raise Δ while keeping E_N in the target window.
+
+8. Material: RuPt  (RuPt, mp-1120769)
+  Facet (100): E_N ≈ -0.80 eV, E_N2 ≈ -0.69 eV, Δ ≈ -0.11 eV
+  Selection rationale: Ru–Pt is screened as a noble/active blend where Ru can activate N while Pt improves stability and may prevent excessive poisoning, serving as a “late‑TM tuning” testbed.
+  Reasoning: RuPt (100) binds *N in the middle of the desired window and only slightly more strongly than *N2, placing it near a compromise between activity and selectivity.
+  Optimization log (goal: Δ > 0, keep -2.0 ≤ E_N ≤ -0.5):
+    Recomputed pristine (100): E_N = -0.8019 eV, E_N2 = -0.6932 eV, Δ = -0.1087 eV (near-miss confirmed).
+    Trial 1 — strain +3% (compressive): E_N = -0.7654 eV, E_N2 = -0.6745 eV, Δ = -0.0909 eV → improved but still Δ < 0.
+    Trial 2 — dope top Ru→Pt: E_N = -0.8244 eV, E_N2 = -0.7054 eV, Δ = -0.1189 eV → worse.
+    Status: no Δ > 0 success found in tested mods; keep as near-miss candidate.
+  Run rationale (per run/trial):
+    Run 0 (pristine recompute): confirm the near-miss baseline on the best facet.
+    Run 1 (+3% compressive strain): attempt small Δ tuning without changing composition (moved toward 0 but not enough).
+    Run 2 (top Ru→Pt): make the site more Pt-like to test if weakening atomic preference improves Δ (it did not).
+
+9. Material: ZrPt  (ZrPt, mp-11554)
+  Facet (211): E_N ≈ -1.31 eV, E_N2 ≈ -1.30 eV, Δ ≈ -0.01 eV
+  Selection rationale: Zr–Pt is screened as an early‑TM (Zr) + noble metal (Pt) intermetallic to sample stronger activation motifs while using Pt to mitigate poisoning and stabilize surfaces.
+  Reasoning: On ZrPt (211), *N lies mid-window and is nearly isoenergetic with *N2, similar to FeMo, so both adsorption and desorption barriers should remain moderate while avoiding a strong preference for either atomic or molecular nitrogen.
+  Re-evaluation (this round) shows this material does NOT satisfy the “GOOD SURFACES” constraints under the current AdsorbML minima (kept here to document the discrepancy from the earlier screen):
+    Recomputed (211): E_N = -1.5916 eV, E_N2 = -1.2992 eV, Δ = -0.2924 eV → FAIL (Δ <= -0.2).
+    Recomputed (110): E_N = -1.7283 eV, E_N2 = -1.1233 eV, Δ = -0.6051 eV → FAIL (Δ <= -0.2).
+    Recomputed (111): E_N = +0.0897 eV → FAIL (E_N too weak/positive), despite Δ > 0.
+    Recomputed (100): E_N = -0.7820 eV, but *N2 returned no valid configurations → cannot evaluate Δ on this facet.
+    Status: moved to NOT MEETING NRR CRITERIA section below (no facet among (111),(100),(110),(211) meets both E_N window and Δ > -0.2 in this re-run).
+  Run rationale (per run/trial):
+    Run 0 (initial screen): flag as promising due to near-isoenergetic *N/*N2 at a step facet.
+    Run 1 (re-evaluation across facets): re-locate adsorption minima to test robustness; Δ became too negative or data was missing on key facets.
+
+10. Pt3Co (Pt3Co / CoPt3) – E_N too weak or positive on tested surfaces.
+  Selection rationale: Pt3Co is screened as a Pt-rich intermetallic where Co can add reactivity; it tests whether “mostly noble” alloys can still activate N at minority-element ensembles.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): eliminated because *N does not enter the target binding window on tested facets.
+
+11. CrPt – combination of facets with E_N < -2.0 eV or > -0.5 eV; no facet lies in the desired E_N window.
+  Selection rationale: Cr–Pt is screened to sample a more reactive early/3d component (Cr) alloyed with Pt, spanning from weak to potentially overbinding regimes.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because adsorption strength falls outside the acceptable E_N window across facets.
+
+12. OsPt3 – E_N remains above -0.5 eV on all examined facets, giving too weak *N binding.
+  Selection rationale: Os–Pt (Pt-rich) is screened as a heavy late‑TM alloy where relativistic effects can alter adsorption; included as a “noble-heavy” comparator.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because *N binding is uniformly too weak.
+
+13. HfPt – some facets have E_N in window, but Δ is strongly negative (Δ << -0.2 eV), indicating over-stabilized *N relative to *N2.
+  Selection rationale: Hf–Pt is screened as an early‑TM + noble combination aiming for strong activation without complete poisoning.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because the surface over-stabilizes *N vs *N2 (Δ too negative).
+
+14. Ta3Pt – very strong *N binding or Δ << -0.2 eV on all checked facets.
+  Selection rationale: Ta–Pt is screened to probe very strong N-binding early‑TM ensembles tempered by Pt for stability.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to overbinding/poisoning signatures (E_N too strong and/or Δ too negative).
+
+15. MnPt – E_N too weak across the examined planes.
+  Selection rationale: Mn–Pt is screened to test whether a 3d element with multiple spin states can provide moderate activation when alloyed with Pt.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because *N remains too weak-binding.
+
+16. Pd–Re (RePd) – strong *N binding but Δ << -0.2 eV.
+  Selection rationale: Re–Pd is screened as a refractory/late‑TM mix that may stabilize activated N at steps; it probes whether Re induces excessive atomic stabilization.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to overly negative Δ (atomic *N too stabilized vs *N2).
+
+17. PdNi (NiPd) – E_N too weak.
+  Selection rationale: Ni–Pd is screened as a “weak-binding” alloy baseline to see if small composition changes can reach the E_N window without doping/strain.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because *N adsorption is too weak.
+
+18. CuPd – E_N positive on all facets.
+  Selection rationale: Cu–Pd is screened as an intentionally weak-binding control alloy to map the low-activity side of the descriptor space.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because *N binding is repulsive/too weak on all tested facets.
+
+19. Cu3Pd2 – E_N positive on all facets.
+  Selection rationale: Cu-rich Cu–Pd intermetallic included to test whether increasing Cu fraction further suppresses *N binding (weak-binding boundary).
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to positive/too-weak *N adsorption.
+
+20. CuPd3 – E_N positive on all facets.
+  Selection rationale: Pd-rich Cu–Pd included as a companion composition point in the same alloy family to observe composition trends in E_N.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to positive/too-weak *N adsorption.
+
+21. ZrPd – very strong *N binding with E_N < -2.0 eV or Δ << -0.2 eV on all evaluated facets.
+  Selection rationale: Zr–Pd is screened as an early‑TM + late‑TM motif where Zr could enable N activation; it tests whether Zr drives poisoning even when alloyed.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because adsorption is too strong and/or Δ indicates strong atomic poisoning.
+
+22. CuZn – E_N strongly positive.
+  Selection rationale: Cu–Zn is screened as a weak-binding, high-selectivity-but-low-activity baseline to anchor the “too weak” end of E_N.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to strongly positive *N adsorption energies.
+
+23. Cu3Zn – E_N strongly positive.
+  Selection rationale: Cu-rich Cu–Zn included to see whether further dilution makes *N binding even weaker (confirming weak-binding regime).
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to strongly positive *N adsorption energies.
+
+24. CuZn3 – E_N strongly positive.
+  Selection rationale: Zn-rich Cu–Zn included as a composition endpoint to check whether Zn can ever create active sites in this family (it did not).
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to strongly positive *N adsorption energies.
+
+25. CuNi – E_N too weak.
+  Selection rationale: Cu–Ni is screened as a common alloy where Cu weakens Ni reactivity; included to test whether “nearby” late‑TM alloys can meet the window without early‑TM elements.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because *N remains too weak-binding.
+
+26. CoCu – either E_N too weak or < -2.0 eV.
+  Selection rationale: Co–Cu is screened to test whether combining a reactive 3d metal (Co) with a weak diluent (Cu) can land in the E_N window.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because adsorption is either too weak or flips into overbinding on some facets, with no stable in-window facet.
+
+27. AuCu – E_N strongly positive.
+  Selection rationale: Au–Cu is screened as a noble/weak-binding boundary case to confirm the “inactive” region and provide a counterexample to successful alloys.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to strongly positive *N adsorption.
+
+28. CuMo – some facets with acceptable E_N but Δ << -0.2 eV.
+  Selection rationale: Cu–Mo is screened to test whether Mo-driven activation can be moderated by Cu dilution while avoiding extreme Δ negativity.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because Δ indicates excessive stabilization of atomic *N relative to *N2 on viable facets.
+
+29. Fe2Co – very strong *N binding, Δ << -0.2 eV.
+  Selection rationale: Fe–Co family is screened as a low-cost, highly reactive baseline where activity may be high but selectivity/poisoning can be problematic.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to overbinding/poisoning (Δ too negative and/or E_N too strong).
+
+30. FeCo – E_N in window on some planes but Δ <= -0.2 eV.
+  Selection rationale: FeCo is screened as the simplest Fe–Co binary to see if it can provide activation without excessive atomic stabilization.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because Δ is too negative on the facets with acceptable E_N.
+
+31. FeW – strong *N binding and Δ << -0.2 eV.
+  Selection rationale: Fe–W is screened as a refractory/strong-binding motif to test the extreme activation side and map when Δ becomes unacceptably negative.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to strong poisoning signatures (very negative Δ and strong E_N).
+
+32. WNi / NiW – binary analogs examined show no facet with both good E_N and Δ > -0.2 eV.
+  Selection rationale: Ni–W is screened to test whether adding a strong-binding refractory element (W) can lift Ni into the activation regime without collapsing Δ.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because no facet simultaneously satisfies the E_N and Δ constraints.
+
+33. RuAu (RuAu3 and related) – E_N near window on some facets but Δ <= -0.2 eV or missing *N2 data on stable sites.
+  Selection rationale: Ru–Au is screened as “active Ru + inert Au” dilution to see if Au can tune adsorption and suppress poisoning while maintaining activation.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to Δ being too negative or incomplete *N2 coverage data on relevant facets/sites.
+
+34. GaIr – E_N mostly positive; no facet in desired E_N window.
+  Selection rationale: Ga–Ir is screened as an intermetallic with a p-block element that can strongly perturb electronic structure; included to test unconventional tuning routes.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because *N binding is too weak/positive across facets.
+
+35. AuPt (PtAu) – E_N > 0.7 eV on all tested facets.
+  Selection rationale: Au–Pt is screened as a noble-alloy control expected to be weak-binding; included to define the far weak-binding limit.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to very weak/positive *N adsorption on all facets.
+
+36. AuPd (PdAu) – E_N > 1.2 eV on all tested facets.
+  Selection rationale: Au–Pd is another noble-alloy weak-binding control to confirm trends across Au-containing systems.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to extremely weak *N adsorption.
+
+37. MoW (WMo) – E_N often < -2.0 eV and Δ << -0.2 eV.
+  Selection rationale: Mo–W is screened as a strong-binding early‑TM baseline to map the poisoning side and understand how refractory binaries behave under the descriptor.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded because adsorption is too strong and Δ indicates severe atomic stabilization/poisoning.
+
+38. MoV (VMo) – E_N < -2.0 eV or Δ << -0.2 eV on all checked facets.
+  Selection rationale: V–Mo is screened as an even more reactive early‑TM binary to probe the extreme activation regime and confirm where the descriptor rejects candidates.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to overbinding and/or excessively negative Δ.
+
+39. VW – very strong binding or Δ << -0.2 eV.
+  Selection rationale: V–W is screened as a strong-binding refractory binary to sample the far overbinding end of the space.
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to poisoning/overbinding (E_N too strong and/or Δ too negative).
+
+40. VCr – very strong binding or Δ << -0.2 eV.
+  Selection rationale: V–Cr is screened as a highly reactive 3d/early‑TM mixture to test whether any facet can escape poisoning (it could not).
+  Run rationale (per run/trial):
+    Run 0 (pristine screen): discarded due to overbinding and/or Δ far below the acceptable threshold.
+
